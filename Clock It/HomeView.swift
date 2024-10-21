@@ -9,6 +9,15 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var position: CGPoint = CGPoint(x: 0, y: 0)
+    @State private var velocity: CGSize = CGSize(width: 4, height: 4)
+    @State private var screenSize: CGSize = CGSize(width: 300, height: 600) // Default size
+
+    @State private var clockViewSize: CGSize = CGSize.zero // Approximate text size for bounce logic
+    let frameRate = 20.0 / 60.0 // 60 FPS
+    let animationDuration = 1.00 // Control speed of animation
+    
+    
     @State private var now: Date
     @State private var isAnimating = false
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -43,7 +52,7 @@ struct HomeView: View {
         let hour = now.component(.hour)
         let minutes = now.component(.minute)
         
-//        return .active
+        return .active
         /**
          * Set full opacity if time >= 6:15 and < 8:00 am
          */
@@ -63,11 +72,13 @@ struct HomeView: View {
     }
     
     var body: some View {
+        // .position(x: proxy.frame(in: .local).midX, y: proxy.frame(in: .local).midY)
         ZStack(alignment: .top) {
             
             VStack {
                 
                 GeometryReader { proxy in
+                    let fullScreenSize = proxy.size
 //                    Rectangle().fill(Color.yellow.opacity(viewMode == .active ? 0.8 : 0) ).frame(height: proxy.size.height * 0.05)
                     
                     if viewMode == .active {
@@ -81,7 +92,9 @@ struct HomeView: View {
                                     startPoint: .top,
                                     endPoint: .bottom
                                 ))
-                                .offset(x: isAnimating ? 80 : -80, y: isAnimating ? -80 : 80)
+                                .position(position)
+                                .offset(x: 0, y: -220)
+//                                .offset(x: isAnimating ? 80 : -80, y: isAnimating ? -80 : 80)
                     }
                     
                             
@@ -98,9 +111,16 @@ struct HomeView: View {
                             FlipClockNumberView(value: minutes.1, size: getSizeFromProxy(proxy: proxy), viewMode: viewMode)
                         }
                     }
-                    .position(x: proxy.frame(in: .local).midX, y: proxy.frame(in: .local).midY)
+                    .background(GeometryReader { clockViewProxy in
+                        Color.clear
+                        .onAppear {
+                            clockViewSize = clockViewProxy.size // Measure text size
+                        }
+                    })
+//                    .position(x: proxy.frame(in: .local).midX, y: proxy.frame(in: .local).midY)
                     .opacity(viewMode == .active ? 1 : 0.4)
-                    .offset(x: isAnimating ? 80 : -80, y: isAnimating ? -80 : 80)
+//                    .offset(x: isAnimating ? 80 : -80, y: isAnimating ? -80 : 80)
+                    .position(position)
                     .onReceive(timer) { input in
                         now = input
                         
@@ -116,6 +136,20 @@ struct HomeView: View {
                         
                     }
                     .padding(16)
+                    .onAppear {
+                        // .position(x: proxy.frame(in: .local).midX, y: proxy.frame(in: .local).midY)
+                        position.x = proxy.frame(in: .local).midX
+                        position.y = proxy.frame(in: .local).midY
+                        screenSize = fullScreenSize // Set screen size initially
+                        
+                        Timer.scheduledTimer(withTimeInterval: frameRate, repeats: true) { _ in
+                            withAnimation(.linear(duration: animationDuration)) {
+                                moveClock()
+                            }
+                        }
+                        
+                       
+                    }
                 }
             }
             
@@ -128,6 +162,29 @@ struct HomeView: View {
             }
             UIApplication.shared.isIdleTimerDisabled = true
         }
+    }
+    
+    func moveClock() {
+        var newPos = position
+        var newVelocity = velocity
+
+        // Update position based on velocity
+        newPos.x += newVelocity.width
+        newPos.y += newVelocity.height
+
+        // Bounce off the horizontal edges
+        if newPos.x - clockViewSize.width / 2 <= 0 || newPos.x + clockViewSize.width / 2 >= screenSize.width {
+            newVelocity.width = -newVelocity.width
+        }
+
+        // Bounce off the vertical edges
+        if newPos.y - clockViewSize.height / 2 <= 0 || newPos.y + clockViewSize.height / 2 >= screenSize.height {
+            newVelocity.height = -newVelocity.height
+        }
+
+        // Apply updates
+        position = newPos
+        velocity = newVelocity
     }
         
 }
