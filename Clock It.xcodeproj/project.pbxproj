@@ -14,6 +14,11 @@
 		9051EFC52C97707300831C64 /* Clock_ItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051EFC42C97707300831C64 /* Clock_ItTests.swift */; };
 		9051EFCF2C97707300831C64 /* Clock_ItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051EFCE2C97707300831C64 /* Clock_ItUITests.swift */; };
 		9051EFD12C97707300831C64 /* Clock_ItUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051EFD02C97707300831C64 /* Clock_ItUITestsLaunchTests.swift */; };
+		90C169462CC6960900E2A6F6 /* Bouncing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C169452CC6960200E2A6F6 /* Bouncing.swift */; };
+		90C169482CC6CD2100E2A6F6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C169472CC6CD2100E2A6F6 /* HomeView.swift */; };
+		90C1694A2CC6CD3A00E2A6F6 /* FlipClockNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C169492CC6CD3A00E2A6F6 /* FlipClockNumberView.swift */; };
+		90C1694C2CC6CD4E00E2A6F6 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C1694B2CC6CD4E00E2A6F6 /* DateExtension.swift */; };
+		90C1694E2CC6CD7600E2A6F6 /* ViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C1694D2CC6CD7600E2A6F6 /* ViewMode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +50,11 @@
 		9051EFCA2C97707300831C64 /* Clock ItUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Clock ItUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9051EFCE2C97707300831C64 /* Clock_ItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock_ItUITests.swift; sourceTree = "<group>"; };
 		9051EFD02C97707300831C64 /* Clock_ItUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock_ItUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		90C169452CC6960200E2A6F6 /* Bouncing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bouncing.swift; sourceTree = "<group>"; };
+		90C169472CC6CD2100E2A6F6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		90C169492CC6CD3A00E2A6F6 /* FlipClockNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipClockNumberView.swift; sourceTree = "<group>"; };
+		90C1694B2CC6CD4E00E2A6F6 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		90C1694D2CC6CD7600E2A6F6 /* ViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +105,13 @@
 		9051EFB12C97707200831C64 /* Clock It */ = {
 			isa = PBXGroup;
 			children = (
+				90C169452CC6960200E2A6F6 /* Bouncing.swift */,
 				9051EFB22C97707200831C64 /* Clock_ItApp.swift */,
 				9051EFB42C97707200831C64 /* ContentView.swift */,
+				90C1694D2CC6CD7600E2A6F6 /* ViewMode.swift */,
+				90C1694B2CC6CD4E00E2A6F6 /* DateExtension.swift */,
+				90C169492CC6CD3A00E2A6F6 /* FlipClockNumberView.swift */,
+				90C169472CC6CD2100E2A6F6 /* HomeView.swift */,
 				9051EFB62C97707300831C64 /* Assets.xcassets */,
 				9051EFB82C97707300831C64 /* Clock_It.entitlements */,
 				9051EFB92C97707300831C64 /* Preview Content */,
@@ -259,8 +274,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90C169462CC6960900E2A6F6 /* Bouncing.swift in Sources */,
+				90C1694C2CC6CD4E00E2A6F6 /* DateExtension.swift in Sources */,
+				90C169482CC6CD2100E2A6F6 /* HomeView.swift in Sources */,
 				9051EFB52C97707200831C64 /* ContentView.swift in Sources */,
 				9051EFB32C97707200831C64 /* Clock_ItApp.swift in Sources */,
+				90C1694E2CC6CD7600E2A6F6 /* ViewMode.swift in Sources */,
+				90C1694A2CC6CD3A00E2A6F6 /* FlipClockNumberView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,10 +450,11 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -468,10 +489,11 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";

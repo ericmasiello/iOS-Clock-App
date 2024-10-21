@@ -23,11 +23,23 @@ final class Clock_ItUITests: XCTestCase {
     }
 
     func testExample() throws {
+//        let mockDate = Date(timeIntervalSince1970: 1695030400)
+        
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
 
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        // Mock the current date
+//            XCUIDateTimeHelper.setCurrentDateTime(mockDate)
+//
+//            // Find the text element and wait for it to appear
+//            let textElement = app.staticText("Your expected text")
+//            XCTAssertTrue(textElement.waitForExistence(timeout: 10))
+//
+//            // Assert
+//            XCTAssertEqual(textElement.label, "Your expected text")
     }
 
     func testLaunchPerformance() throws {
