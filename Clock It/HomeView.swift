@@ -52,7 +52,7 @@ struct HomeView: View {
         let hour = now.component(.hour)
         let minutes = now.component(.minute)
         
-        return .active
+//        return .active
         /**
          * Set full opacity if time >= 6:15 and < 8:00 am
          */
@@ -79,21 +79,33 @@ struct HomeView: View {
                 
                 GeometryReader { proxy in
                     let fullScreenSize = proxy.size
+                    let size =  getSizeFromProxy(proxy: proxy);
 //                    Rectangle().fill(Color.yellow.opacity(viewMode == .active ? 0.8 : 0) ).frame(height: proxy.size.height * 0.05)
                     
                     if viewMode == .active {
-                        Image(systemName: "sun.max")
-                                .resizable()
-                                .aspectRatio(1, contentMode: .fit)
-                                .frame(width: 200)
-                                .font(.title)
-                                .foregroundStyle(LinearGradient(
-                                    colors: [.yellow, .red],
-                                    startPoint: .top,
-                                    endPoint: .bottom
-                                ))
-                                .position(position)
-                                .offset(x: 0, y: -220)
+                        // TODO: make this dynamic - it can be based on the current weather
+                        // or we can allow customers set a custom emoji for a specific day
+                        Text("🌈✨🦄")
+                            .font(.system(size: size * 0.95))
+                            .foregroundStyle(LinearGradient(
+                                colors: [.yellow, .red],
+                                startPoint: .top,
+                                endPoint: .bottom
+                            ))
+                            .position(position)
+                            .offset(x: 0, y: -220)
+//                        Image(systemName: "sun.max")
+//                                .resizable()
+//                                .aspectRatio(1, contentMode: .fit)
+//                                .frame(width: 200)
+//                                .font(.title)
+//                                .foregroundStyle(LinearGradient(
+//                                    colors: [.yellow, .red],
+//                                    startPoint: .top,
+//                                    endPoint: .bottom
+//                                ))
+//                                .position(position)
+//                                .offset(x: 0, y: -220)
 //                                .offset(x: isAnimating ? 80 : -80, y: isAnimating ? -80 : 80)
                     }
                     
@@ -102,13 +114,13 @@ struct HomeView: View {
                     
                     Group {
                         HStack(spacing: 10) {
-                            FlipClockNumberView(value: hour.0, size: getSizeFromProxy(proxy: proxy), color: hour.2, viewMode: viewMode)
-                            FlipClockNumberView(value: hour.1, size: getSizeFromProxy(proxy: proxy), color: hour.2, viewMode: viewMode)
+                            FlipClockNumberView(value: hour.0, size: size, color: hour.2, viewMode: viewMode)
+                            FlipClockNumberView(value: hour.1, size: size, color: hour.2, viewMode: viewMode)
                             
-                            FlipClockNumberView(value: ":", size: getSizeFromProxy(proxy: proxy), viewMode: viewMode)
+                            FlipClockNumberView(value: ":", size: size, viewMode: viewMode)
                             
-                            FlipClockNumberView(value: minutes.0, size: getSizeFromProxy(proxy: proxy), viewMode: viewMode)
-                            FlipClockNumberView(value: minutes.1, size: getSizeFromProxy(proxy: proxy), viewMode: viewMode)
+                            FlipClockNumberView(value: minutes.0, size: size, viewMode: viewMode)
+                            FlipClockNumberView(value: minutes.1, size: size, viewMode: viewMode)
                         }
                     }
                     .background(GeometryReader { clockViewProxy in
