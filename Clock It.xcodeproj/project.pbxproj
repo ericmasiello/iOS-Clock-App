@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9010EBC32CD3811F00EF5F69 /* TemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010EBC22CD3811F00EF5F69 /* TemperatureView.swift */; };
+		9010EBC72CD3850B00EF5F69 /* SizedContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010EBC62CD3850B00EF5F69 /* SizedContentView.swift */; };
+		9010EBC92CD3863200EF5F69 /* EmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010EBC82CD3863200EF5F69 /* EmojiView.swift */; };
+		9044D0E72CD37B5E00AC1832 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9044D0E62CD37B4900AC1832 /* ClockView.swift */; };
 		9051EFB32C97707200831C64 /* Clock_ItApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051EFB22C97707200831C64 /* Clock_ItApp.swift */; };
 		9051EFB52C97707200831C64 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051EFB42C97707200831C64 /* ContentView.swift */; };
 		9051EFB72C97707300831C64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9051EFB62C97707300831C64 /* Assets.xcassets */; };
@@ -16,6 +20,8 @@
 		9051EFD12C97707300831C64 /* Clock_ItUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051EFD02C97707300831C64 /* Clock_ItUITestsLaunchTests.swift */; };
 		9084BBF12CCB1CAB00F09E74 /* OpenMeteoSdk in Frameworks */ = {isa = PBXBuildFile; productRef = 9084BBF02CCB1CAB00F09E74 /* OpenMeteoSdk */; };
 		9084BBF32CCB1CB900F09E74 /* OpenWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9084BBF22CCB1CB600F09E74 /* OpenWeather.swift */; };
+		90B5822E2CD3E36C00B59BB9 /* BounceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B5822D2CD3E36C00B59BB9 /* BounceView.swift */; };
+		90B582302CD3EBA200B59BB9 /* StatefulView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B5822F2CD3EBA200B59BB9 /* StatefulView.swift */; };
 		90C169462CC6960900E2A6F6 /* Bouncing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C169452CC6960200E2A6F6 /* Bouncing.swift */; };
 		90C169482CC6CD2100E2A6F6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C169472CC6CD2100E2A6F6 /* HomeView.swift */; };
 		90C1694A2CC6CD3A00E2A6F6 /* FlipClockNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C169492CC6CD3A00E2A6F6 /* FlipClockNumberView.swift */; };
@@ -41,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9010EBC22CD3811F00EF5F69 /* TemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureView.swift; sourceTree = "<group>"; };
+		9010EBC62CD3850B00EF5F69 /* SizedContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizedContentView.swift; sourceTree = "<group>"; };
+		9010EBC82CD3863200EF5F69 /* EmojiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiView.swift; sourceTree = "<group>"; };
+		9044D0E62CD37B4900AC1832 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		9051EFAF2C97707200831C64 /* Clock It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clock It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9051EFB22C97707200831C64 /* Clock_ItApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock_ItApp.swift; sourceTree = "<group>"; };
 		9051EFB42C97707200831C64 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +63,8 @@
 		9051EFCE2C97707300831C64 /* Clock_ItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock_ItUITests.swift; sourceTree = "<group>"; };
 		9051EFD02C97707300831C64 /* Clock_ItUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock_ItUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9084BBF22CCB1CB600F09E74 /* OpenWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeather.swift; sourceTree = "<group>"; };
+		90B5822D2CD3E36C00B59BB9 /* BounceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceView.swift; sourceTree = "<group>"; };
+		90B5822F2CD3EBA200B59BB9 /* StatefulView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulView.swift; sourceTree = "<group>"; };
 		90C169452CC6960200E2A6F6 /* Bouncing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bouncing.swift; sourceTree = "<group>"; };
 		90C169472CC6CD2100E2A6F6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		90C169492CC6CD3A00E2A6F6 /* FlipClockNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipClockNumberView.swift; sourceTree = "<group>"; };
@@ -109,6 +121,7 @@
 		9051EFB12C97707200831C64 /* Clock It */ = {
 			isa = PBXGroup;
 			children = (
+				9044D0E62CD37B4900AC1832 /* ClockView.swift */,
 				9084BBF22CCB1CB600F09E74 /* OpenWeather.swift */,
 				90C169452CC6960200E2A6F6 /* Bouncing.swift */,
 				9051EFB22C97707200831C64 /* Clock_ItApp.swift */,
@@ -117,9 +130,14 @@
 				90C1694B2CC6CD4E00E2A6F6 /* DateExtension.swift */,
 				90C169492CC6CD3A00E2A6F6 /* FlipClockNumberView.swift */,
 				90C169472CC6CD2100E2A6F6 /* HomeView.swift */,
+				9010EBC82CD3863200EF5F69 /* EmojiView.swift */,
+				9010EBC22CD3811F00EF5F69 /* TemperatureView.swift */,
+				9010EBC62CD3850B00EF5F69 /* SizedContentView.swift */,
+				90B5822D2CD3E36C00B59BB9 /* BounceView.swift */,
 				9051EFB62C97707300831C64 /* Assets.xcassets */,
 				9051EFB82C97707300831C64 /* Clock_It.entitlements */,
 				9051EFB92C97707300831C64 /* Preview Content */,
+				90B5822F2CD3EBA200B59BB9 /* StatefulView.swift */,
 			);
 			path = "Clock It";
 			sourceTree = "<group>";
@@ -213,7 +231,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1610;
 				TargetAttributes = {
 					9051EFAE2C97707200831C64 = {
 						CreatedOnToolsVersion = 15.4;
@@ -287,8 +305,14 @@
 				90C169482CC6CD2100E2A6F6 /* HomeView.swift in Sources */,
 				9051EFB52C97707200831C64 /* ContentView.swift in Sources */,
 				9051EFB32C97707200831C64 /* Clock_ItApp.swift in Sources */,
+				90B5822E2CD3E36C00B59BB9 /* BounceView.swift in Sources */,
+				9010EBC92CD3863200EF5F69 /* EmojiView.swift in Sources */,
+				9010EBC32CD3811F00EF5F69 /* TemperatureView.swift in Sources */,
+				9010EBC72CD3850B00EF5F69 /* SizedContentView.swift in Sources */,
 				90C1694E2CC6CD7600E2A6F6 /* ViewMode.swift in Sources */,
 				9084BBF32CCB1CB900F09E74 /* OpenWeather.swift in Sources */,
+				90B582302CD3EBA200B59BB9 /* StatefulView.swift in Sources */,
+				9044D0E72CD37B5E00AC1832 /* ClockView.swift in Sources */,
 				90C1694A2CC6CD3A00E2A6F6 /* FlipClockNumberView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +384,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -421,6 +446,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -448,11 +474,14 @@
 				CODE_SIGN_ENTITLEMENTS = "Clock It/Clock_It.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Clock It/Preview Content\"";
 				DEVELOPMENT_TEAM = R6SSQ5A38J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Clock It";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -464,7 +493,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
@@ -472,7 +501,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.synbydesign.Clock-It";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -487,11 +517,14 @@
 				CODE_SIGN_ENTITLEMENTS = "Clock It/Clock_It.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Clock It/Preview Content\"";
 				DEVELOPMENT_TEAM = R6SSQ5A38J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Clock It";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -503,7 +536,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.5;
@@ -511,7 +544,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.synbydesign.Clock-It";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -521,10 +555,10 @@
 		9051EFD82C97707300831C64 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = R6SSQ5A38J;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
@@ -544,10 +578,10 @@
 		9051EFD92C97707300831C64 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = R6SSQ5A38J;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
@@ -567,9 +601,9 @@
 		9051EFDB2C97707300831C64 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = R6SSQ5A38J;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
@@ -589,9 +623,9 @@
 		9051EFDC2C97707300831C64 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = R6SSQ5A38J;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.5;

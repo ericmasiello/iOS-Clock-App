@@ -31,28 +31,6 @@ struct HomeView: View {
         self.now = now
     }
     
-    private var hour: (String, String, Color?) {
-        let hour = now.component(.hour)
-        let normalizedHour = hour > 12 ? hour - 12 : hour
-        
-        let color: Color? = switch(viewMode) {
-        case .active:
-            .yellow.opacity(0.8)
-        case .dim:
-            nil
-        }
-        
-        return (String(normalizedHour / 10), String(normalizedHour % 10), color)
-    }
-    
-    private var minutes: (String, String) {
-        (String(now.component(.minute) / 10), String(now.component(.minute) % 10))
-    }
-    
-    private var seconds: (String, String) {
-        (String(now.component(.second) / 10), String(now.component(.second) % 10))
-    }
-    
     private var viewMode: ViewMode {
         let hour = now.component(.hour)
         let minutes = now.component(.minute)
@@ -88,10 +66,7 @@ struct HomeView: View {
                     let size =  getSizeFromProxy(proxy: proxy);
 
                     if let temp = currentTemperatureInF {
-                        Text("\(Int(temp.rounded()))℉")
-                            .font(.largeTitle)
-                            .monospaced()
-                            .foregroundColor(.white)
+                        TemperatureView(temperatureF: temp)
                             .background(GeometryReader { temperatureProxy in
                                 Color.clear
                                 .onAppear {
@@ -117,18 +92,7 @@ struct HomeView: View {
                             .offset(x: 0, y: clockViewSize.height * -1)
                     }
                     
-                    Group {
-                        
-                        HStack(spacing: 10) {
-                            FlipClockNumberView(value: hour.0, size: size, color: hour.2, viewMode: viewMode)
-                            FlipClockNumberView(value: hour.1, size: size, color: hour.2, viewMode: viewMode)
-                            
-                            FlipClockNumberView(value: ":", size: size, viewMode: viewMode)
-                            
-                            FlipClockNumberView(value: minutes.0, size: size, viewMode: viewMode)
-                            FlipClockNumberView(value: minutes.1, size: size, viewMode: viewMode)
-                        }
-                    }
+                    ClockView(size: size, viewMode: viewMode, now: now)
                     .background(GeometryReader { clockViewProxy in
                         Color.clear
                         // TODO: change to Color.clear

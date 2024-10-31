@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// THIS IS A SIMPLE DEMO
 struct BouncingTextView: View {
     @State private var position: CGPoint = CGPoint(x: 100, y: 100)
     @State private var velocity: CGSize = CGSize(width: 4, height: 4)
