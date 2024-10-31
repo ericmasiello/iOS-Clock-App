@@ -12,15 +12,20 @@ struct HomeView: View {
     @State private var position: CGPoint = CGPoint(x: 0, y: 0)
     @State private var velocity: CGSize = CGSize(width: 4, height: 4)
     @State private var screenSize: CGSize = CGSize(width: 300, height: 600) // Default size
+    @State private var currentTemperatureInF: Float? = nil
 
     @State private var clockViewSize: CGSize = CGSize.zero // Approximate text size for bounce logic
+    @State private var temperatureViewSize: CGSize = CGSize.zero // Approximate text size for bounce logic
     let frameRate = 20.0 / 60.0 // 60 FPS
     let animationDuration = 1.00 // Control speed of animation
     
     
     @State private var now: Date
     @State private var isAnimating = false
-    private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    private let clockTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
+    // fetch every 3 hours
+    private let fetchWeatherTimer = Timer.publish(every: 60*60*3, on: .main, in: .common).autoconnect()
     
     init(now: Date) {
         self.now = now
@@ -52,7 +57,7 @@ struct HomeView: View {
         let hour = now.component(.hour)
         let minutes = now.component(.minute)
         
-//        return .active
+        // return .active
         /**
          * Set full opacity if time >= 6:15 and < 8:00 am
          */
@@ -75,12 +80,28 @@ struct HomeView: View {
         // .position(x: proxy.frame(in: .local).midX, y: proxy.frame(in: .local).midY)
         ZStack(alignment: .top) {
             
-            VStack {
+            VStack(alignment: .center) {
+                
                 
                 GeometryReader { proxy in
                     let fullScreenSize = proxy.size
                     let size =  getSizeFromProxy(proxy: proxy);
-//                    Rectangle().fill(Color.yellow.opacity(viewMode == .active ? 0.8 : 0) ).frame(height: proxy.size.height * 0.05)
+
+                    if let temp = currentTemperatureInF {
+                        Text("\(Int(temp.rounded()))℉")
+                            .font(.largeTitle)
+                            .monospaced()
+                            .foregroundColor(.white)
+                            .background(GeometryReader { temperatureProxy in
+                                Color.clear
+                                .onAppear {
+                                    temperatureViewSize = temperatureProxy.size // Measure text size
+                                }
+                            })
+                            .position(position)
+                            .offset(x: (clockViewSize.width / 2) - (temperatureViewSize.width / 2), y: clockViewSize.height - temperatureViewSize.height)
+                            
+                    }
                     
                     if viewMode == .active {
                         // TODO: make this dynamic - it can be based on the current weather
@@ -93,26 +114,11 @@ struct HomeView: View {
                                 endPoint: .bottom
                             ))
                             .position(position)
-                            .offset(x: 0, y: -220)
-//                        Image(systemName: "sun.max")
-//                                .resizable()
-//                                .aspectRatio(1, contentMode: .fit)
-//                                .frame(width: 200)
-//                                .font(.title)
-//                                .foregroundStyle(LinearGradient(
-//                                    colors: [.yellow, .red],
-//                                    startPoint: .top,
-//                                    endPoint: .bottom
-//                                ))
-//                                .position(position)
-//                                .offset(x: 0, y: -220)
-//                                .offset(x: isAnimating ? 80 : -80, y: isAnimating ? -80 : 80)
+                            .offset(x: 0, y: clockViewSize.height * -1)
                     }
                     
-                            
-                            
-                    
                     Group {
+                        
                         HStack(spacing: 10) {
                             FlipClockNumberView(value: hour.0, size: size, color: hour.2, viewMode: viewMode)
                             FlipClockNumberView(value: hour.1, size: size, color: hour.2, viewMode: viewMode)
@@ -125,6 +131,8 @@ struct HomeView: View {
                     }
                     .background(GeometryReader { clockViewProxy in
                         Color.clear
+                        // TODO: change to Color.clear
+                        // Color.red.opacity(0.2)
                         .onAppear {
                             clockViewSize = clockViewProxy.size // Measure text size
                         }
@@ -133,7 +141,7 @@ struct HomeView: View {
                     .opacity(viewMode == .active ? 1 : 0.4)
 //                    .offset(x: isAnimating ? 80 : -80, y: isAnimating ? -80 : 80)
                     .position(position)
-                    .onReceive(timer) { input in
+                    .onReceive(clockTimer) { input in
                         now = input
                         
                         let hour = now.component(.hour)
@@ -147,9 +155,14 @@ struct HomeView: View {
                         
                         
                     }
+                    .onReceive(fetchWeatherTimer) { input in
+                        print("Fetch the weather")
+                        print(input)
+                        
+                        
+                    }
                     .padding(16)
                     .onAppear {
-                        // .position(x: proxy.frame(in: .local).midX, y: proxy.frame(in: .local).midY)
                         position.x = proxy.frame(in: .local).midX
                         position.y = proxy.frame(in: .local).midY
                         screenSize = fullScreenSize // Set screen size initially
@@ -164,6 +177,7 @@ struct HomeView: View {
                     }
                 }
             }
+//            .border(Color.red)
             
             
         }
@@ -173,6 +187,41 @@ struct HomeView: View {
                 isAnimating = true
             }
             UIApplication.shared.isIdleTimerDisabled = true
+            
+            Task {
+                let data = await WeatherClient.getWeather()
+                
+                guard let data = data else {
+                    return
+                }
+                
+                currentTemperatureInF = data.current.temperature2m
+                
+                /// Timezone `.gmt` is deliberately used.
+                /// By adding `utcOffsetSeconds` before, local-time is inferred
+                let dateFormatter = DateFormatter()
+                dateFormatter.timeZone = .gmt
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
+                
+                for (i, date) in data.daily.time.enumerated() {
+                    print(dateFormatter.string(from: date))
+                    print(data.daily.weatherCode[i])
+                    print(data.daily.temperature2mMax[i])
+                    print(data.daily.temperature2mMin[i])
+                    print(data.daily.apparentTemperatureMax[i])
+                    print(data.daily.apparentTemperatureMin[i])
+                    print(data.daily.precipitationSum[i])
+                    print(data.daily.rainSum[i])
+                    print(data.daily.showersSum[i])
+                    print(data.daily.snowfallSum[i])
+                    print(data.daily.precipitationHours[i])
+                    print(data.daily.precipitationProbabilityMax[i])
+                    print(data.daily.windSpeed10mMax[i])
+                    print(data.daily.windGusts10mMax[i])
+                }
+
+            }
+            
         }
     }
     

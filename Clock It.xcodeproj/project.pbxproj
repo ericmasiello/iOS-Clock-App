@@ -14,6 +14,8 @@
 		9051EFC52C97707300831C64 /* Clock_ItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051EFC42C97707300831C64 /* Clock_ItTests.swift */; };
 		9051EFCF2C97707300831C64 /* Clock_ItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051EFCE2C97707300831C64 /* Clock_ItUITests.swift */; };
 		9051EFD12C97707300831C64 /* Clock_ItUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051EFD02C97707300831C64 /* Clock_ItUITestsLaunchTests.swift */; };
+		9084BBF12CCB1CAB00F09E74 /* OpenMeteoSdk in Frameworks */ = {isa = PBXBuildFile; productRef = 9084BBF02CCB1CAB00F09E74 /* OpenMeteoSdk */; };
+		9084BBF32CCB1CB900F09E74 /* OpenWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9084BBF22CCB1CB600F09E74 /* OpenWeather.swift */; };
 		90C169462CC6960900E2A6F6 /* Bouncing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C169452CC6960200E2A6F6 /* Bouncing.swift */; };
 		90C169482CC6CD2100E2A6F6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C169472CC6CD2100E2A6F6 /* HomeView.swift */; };
 		90C1694A2CC6CD3A00E2A6F6 /* FlipClockNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C169492CC6CD3A00E2A6F6 /* FlipClockNumberView.swift */; };
@@ -50,6 +52,7 @@
 		9051EFCA2C97707300831C64 /* Clock ItUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Clock ItUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9051EFCE2C97707300831C64 /* Clock_ItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock_ItUITests.swift; sourceTree = "<group>"; };
 		9051EFD02C97707300831C64 /* Clock_ItUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock_ItUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9084BBF22CCB1CB600F09E74 /* OpenWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeather.swift; sourceTree = "<group>"; };
 		90C169452CC6960200E2A6F6 /* Bouncing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bouncing.swift; sourceTree = "<group>"; };
 		90C169472CC6CD2100E2A6F6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		90C169492CC6CD3A00E2A6F6 /* FlipClockNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipClockNumberView.swift; sourceTree = "<group>"; };
@@ -62,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9084BBF12CCB1CAB00F09E74 /* OpenMeteoSdk in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +109,7 @@
 		9051EFB12C97707200831C64 /* Clock It */ = {
 			isa = PBXGroup;
 			children = (
+				9084BBF22CCB1CB600F09E74 /* OpenWeather.swift */,
 				90C169452CC6960200E2A6F6 /* Bouncing.swift */,
 				9051EFB22C97707200831C64 /* Clock_ItApp.swift */,
 				9051EFB42C97707200831C64 /* ContentView.swift */,
@@ -232,6 +237,9 @@
 				Base,
 			);
 			mainGroup = 9051EFA62C97707200831C64;
+			packageReferences = (
+				9084BBEF2CCB1CAB00F09E74 /* XCRemoteSwiftPackageReference "sdk" */,
+			);
 			productRefGroup = 9051EFB02C97707200831C64 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -280,6 +288,7 @@
 				9051EFB52C97707200831C64 /* ContentView.swift in Sources */,
 				9051EFB32C97707200831C64 /* Clock_ItApp.swift in Sources */,
 				90C1694E2CC6CD7600E2A6F6 /* ViewMode.swift in Sources */,
+				9084BBF32CCB1CB900F09E74 /* OpenWeather.swift in Sources */,
 				90C1694A2CC6CD3A00E2A6F6 /* FlipClockNumberView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -639,6 +648,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9084BBEF2CCB1CAB00F09E74 /* XCRemoteSwiftPackageReference "sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/open-meteo/sdk.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9084BBF02CCB1CAB00F09E74 /* OpenMeteoSdk */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9084BBEF2CCB1CAB00F09E74 /* XCRemoteSwiftPackageReference "sdk" */;
+			productName = OpenMeteoSdk;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9051EFA72C97707200831C64 /* Project object */;
 }
