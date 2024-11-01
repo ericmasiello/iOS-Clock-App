@@ -10,7 +10,10 @@ import SwiftUI
 struct ClockView: View {    
     var size: CGFloat = 10
     var viewMode: ViewMode = .dim
+  // TODO: delete this
+  // @deprecated
     var now: Date
+    
     
     private var hour: (String, String, Color?) {      
         let hour = now.component(.hour)
@@ -27,11 +30,7 @@ struct ClockView: View {
     }
     
     private var minutes: (String, String) {
-        (String(now.component(.minute) / 10), String(now.component(.minute) % 10))
-    }
-    
-    private var seconds: (String, String) {
-        (String(now.component(.second) / 10), String(now.component(.second) % 10))
+      (String(now.component(.minute) / 10), String(now.component(.minute) % 10))
     }
     
     var body: some View {

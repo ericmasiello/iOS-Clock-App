@@ -43,6 +43,7 @@ struct BounceView<Content: View>: View {
     content.background(GeometryReader { contentViewProxy in
       Color.clear
         .onAppear {
+          debugPrint("Running Child BounceView onAppear")
           debugPrint("Total width \(UIScreen.main.bounds.width)")
           debugPrint("Content view width \(contentViewProxy.size.width)")
           viewSize = contentViewProxy.size // Measure view size
@@ -50,11 +51,18 @@ struct BounceView<Content: View>: View {
     })
     .position(position)
     .onAppear {
+      debugPrint("Running outer BounceView onAppear")
       screenSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
       position.x = UIScreen.main.bounds.midX
       position.y = UIScreen.main.bounds.midY
 
-      Timer.scheduledTimer(withTimeInterval: frameRate, repeats: true) { _ in
+      Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
+//        withAnimation(.linear(duration: animationDuration)) {
+//          // skip animating until the viewSize is updated by the child view
+//          if viewSize.width > 0 && viewSize.height > 0 {
+//            updatePositionAndVelocity()
+//          }
+//        }
         withAnimation(.linear(duration: animationDuration)) {
           // skip animating until the viewSize is updated by the child view
           if viewSize.width > 0 && viewSize.height > 0 {

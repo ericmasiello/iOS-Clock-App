@@ -28,7 +28,7 @@ struct EmojiView: View {
         case .halloween:
             return "🍂🎃👻"
         case .thanksgiving:
-            return "🦃🌽🫃"
+            return "🍂🦃🌽"
         case .snow:
             return "☃️🏂❄️"
         case .sunshine:
@@ -47,7 +47,6 @@ struct EmojiView: View {
 }
 
 #Preview {
-    
     let size = CGFloat(40)
     List {
         EmojiView(option: .sparkles , size: size)
