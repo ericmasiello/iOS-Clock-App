@@ -12,7 +12,7 @@ struct ClockView: View {
     var viewMode: ViewMode = .dim
     var now: Date
     
-    private var hour: (String, String, Color?) {
+    private var hour: (String, String, Color?) {      
         let hour = now.component(.hour)
         let normalizedHour = hour > 12 ? hour - 12 : hour
         
@@ -37,11 +37,11 @@ struct ClockView: View {
     var body: some View {
         Group {
             HStack(spacing: 10) {
-                FlipClockNumberView(value: hour.0, size: size, color: hour.2, viewMode: viewMode)
-                FlipClockNumberView(value: hour.1, size: size, color: hour.2, viewMode: viewMode)
-                FlipClockNumberView(value: ":", size: size, viewMode: viewMode)
-                FlipClockNumberView(value: minutes.0, size: size, viewMode: viewMode)
-                FlipClockNumberView(value: minutes.1, size: size, viewMode: viewMode)
+                FlipClockNumberView(value: hour.0, size: size, color: hour.2)
+                FlipClockNumberView(value: hour.1, size: size, color: hour.2)
+                FlipClockNumberView(value: ":", size: size)
+                FlipClockNumberView(value: minutes.0, size: size)
+                FlipClockNumberView(value: minutes.1, size: size)
             }
         }
     }
@@ -53,7 +53,7 @@ struct ClockView: View {
         ClockView(size: 100.0, viewMode: .active, now: Date())
     }
     .padding()
-    .background(Color.black)
+    .preferredColorScheme(.dark)
     
 }
 

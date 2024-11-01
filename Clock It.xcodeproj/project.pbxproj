@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D3090932CD40C16006BA5E1 /* WeatherDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3090922CD40C16006BA5E1 /* WeatherDataView.swift */; };
+		4D3090952CD40C93006BA5E1 /* ViewModeByDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3090942CD40C93006BA5E1 /* ViewModeByDateView.swift */; };
+		4D3090982CD45D5A006BA5E1 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3090972CD45D5A006BA5E1 /* WeatherData.swift */; };
 		9010EBC32CD3811F00EF5F69 /* TemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010EBC22CD3811F00EF5F69 /* TemperatureView.swift */; };
-		9010EBC72CD3850B00EF5F69 /* SizedContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010EBC62CD3850B00EF5F69 /* SizedContentView.swift */; };
 		9010EBC92CD3863200EF5F69 /* EmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010EBC82CD3863200EF5F69 /* EmojiView.swift */; };
 		9044D0E72CD37B5E00AC1832 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9044D0E62CD37B4900AC1832 /* ClockView.swift */; };
 		9051EFB32C97707200831C64 /* Clock_ItApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051EFB22C97707200831C64 /* Clock_ItApp.swift */; };
@@ -21,9 +23,7 @@
 		9084BBF12CCB1CAB00F09E74 /* OpenMeteoSdk in Frameworks */ = {isa = PBXBuildFile; productRef = 9084BBF02CCB1CAB00F09E74 /* OpenMeteoSdk */; };
 		9084BBF32CCB1CB900F09E74 /* OpenWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9084BBF22CCB1CB600F09E74 /* OpenWeather.swift */; };
 		90B5822E2CD3E36C00B59BB9 /* BounceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B5822D2CD3E36C00B59BB9 /* BounceView.swift */; };
-		90B582302CD3EBA200B59BB9 /* StatefulView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B5822F2CD3EBA200B59BB9 /* StatefulView.swift */; };
-		90C169462CC6960900E2A6F6 /* Bouncing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C169452CC6960200E2A6F6 /* Bouncing.swift */; };
-		90C169482CC6CD2100E2A6F6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C169472CC6CD2100E2A6F6 /* HomeView.swift */; };
+		90B582302CD3EBA200B59BB9 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B5822F2CD3EBA200B59BB9 /* TimeView.swift */; };
 		90C1694A2CC6CD3A00E2A6F6 /* FlipClockNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C169492CC6CD3A00E2A6F6 /* FlipClockNumberView.swift */; };
 		90C1694C2CC6CD4E00E2A6F6 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C1694B2CC6CD4E00E2A6F6 /* DateExtension.swift */; };
 		90C1694E2CC6CD7600E2A6F6 /* ViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C1694D2CC6CD7600E2A6F6 /* ViewMode.swift */; };
@@ -47,8 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D3090922CD40C16006BA5E1 /* WeatherDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataView.swift; sourceTree = "<group>"; };
+		4D3090942CD40C93006BA5E1 /* ViewModeByDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModeByDateView.swift; sourceTree = "<group>"; };
+		4D3090972CD45D5A006BA5E1 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		9010EBC22CD3811F00EF5F69 /* TemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureView.swift; sourceTree = "<group>"; };
-		9010EBC62CD3850B00EF5F69 /* SizedContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizedContentView.swift; sourceTree = "<group>"; };
 		9010EBC82CD3863200EF5F69 /* EmojiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiView.swift; sourceTree = "<group>"; };
 		9044D0E62CD37B4900AC1832 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		9051EFAF2C97707200831C64 /* Clock It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clock It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,9 +66,7 @@
 		9051EFD02C97707300831C64 /* Clock_ItUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clock_ItUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9084BBF22CCB1CB600F09E74 /* OpenWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeather.swift; sourceTree = "<group>"; };
 		90B5822D2CD3E36C00B59BB9 /* BounceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceView.swift; sourceTree = "<group>"; };
-		90B5822F2CD3EBA200B59BB9 /* StatefulView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulView.swift; sourceTree = "<group>"; };
-		90C169452CC6960200E2A6F6 /* Bouncing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bouncing.swift; sourceTree = "<group>"; };
-		90C169472CC6CD2100E2A6F6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		90B5822F2CD3EBA200B59BB9 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		90C169492CC6CD3A00E2A6F6 /* FlipClockNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipClockNumberView.swift; sourceTree = "<group>"; };
 		90C1694B2CC6CD4E00E2A6F6 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		90C1694D2CC6CD7600E2A6F6 /* ViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMode.swift; sourceTree = "<group>"; };
@@ -98,6 +98,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D3090962CD45D42006BA5E1 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				9010EBC22CD3811F00EF5F69 /* TemperatureView.swift */,
+				9084BBF22CCB1CB600F09E74 /* OpenWeather.swift */,
+				4D3090972CD45D5A006BA5E1 /* WeatherData.swift */,
+				4D3090922CD40C16006BA5E1 /* WeatherDataView.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		4D3090992CD45DAB006BA5E1 /* ViewMode */ = {
+			isa = PBXGroup;
+			children = (
+				4D3090942CD40C93006BA5E1 /* ViewModeByDateView.swift */,
+				90C1694D2CC6CD7600E2A6F6 /* ViewMode.swift */,
+			);
+			path = ViewMode;
+			sourceTree = "<group>";
+		};
+		4D30909A2CD45DD3006BA5E1 /* DateAndTime */ = {
+			isa = PBXGroup;
+			children = (
+				90C1694B2CC6CD4E00E2A6F6 /* DateExtension.swift */,
+				90C169492CC6CD3A00E2A6F6 /* FlipClockNumberView.swift */,
+				9044D0E62CD37B4900AC1832 /* ClockView.swift */,
+				90B5822F2CD3EBA200B59BB9 /* TimeView.swift */,
+			);
+			path = DateAndTime;
+			sourceTree = "<group>";
+		};
+		4D30909B2CD45DFD006BA5E1 /* Emoji */ = {
+			isa = PBXGroup;
+			children = (
+				9010EBC82CD3863200EF5F69 /* EmojiView.swift */,
+			);
+			path = Emoji;
+			sourceTree = "<group>";
+		};
+		4D30909C2CD45E06006BA5E1 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				90B5822D2CD3E36C00B59BB9 /* BounceView.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
 		9051EFA62C97707200831C64 = {
 			isa = PBXGroup;
 			children = (
@@ -121,23 +168,16 @@
 		9051EFB12C97707200831C64 /* Clock It */ = {
 			isa = PBXGroup;
 			children = (
-				9044D0E62CD37B4900AC1832 /* ClockView.swift */,
-				9084BBF22CCB1CB600F09E74 /* OpenWeather.swift */,
-				90C169452CC6960200E2A6F6 /* Bouncing.swift */,
+				4D30909C2CD45E06006BA5E1 /* Animation */,
+				4D30909B2CD45DFD006BA5E1 /* Emoji */,
+				4D30909A2CD45DD3006BA5E1 /* DateAndTime */,
+				4D3090992CD45DAB006BA5E1 /* ViewMode */,
+				4D3090962CD45D42006BA5E1 /* Weather */,
 				9051EFB22C97707200831C64 /* Clock_ItApp.swift */,
 				9051EFB42C97707200831C64 /* ContentView.swift */,
-				90C1694D2CC6CD7600E2A6F6 /* ViewMode.swift */,
-				90C1694B2CC6CD4E00E2A6F6 /* DateExtension.swift */,
-				90C169492CC6CD3A00E2A6F6 /* FlipClockNumberView.swift */,
-				90C169472CC6CD2100E2A6F6 /* HomeView.swift */,
-				9010EBC82CD3863200EF5F69 /* EmojiView.swift */,
-				9010EBC22CD3811F00EF5F69 /* TemperatureView.swift */,
-				9010EBC62CD3850B00EF5F69 /* SizedContentView.swift */,
-				90B5822D2CD3E36C00B59BB9 /* BounceView.swift */,
 				9051EFB62C97707300831C64 /* Assets.xcassets */,
 				9051EFB82C97707300831C64 /* Clock_It.entitlements */,
 				9051EFB92C97707300831C64 /* Preview Content */,
-				90B5822F2CD3EBA200B59BB9 /* StatefulView.swift */,
 			);
 			path = "Clock It";
 			sourceTree = "<group>";
@@ -300,18 +340,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90C169462CC6960900E2A6F6 /* Bouncing.swift in Sources */,
+				4D3090932CD40C16006BA5E1 /* WeatherDataView.swift in Sources */,
 				90C1694C2CC6CD4E00E2A6F6 /* DateExtension.swift in Sources */,
-				90C169482CC6CD2100E2A6F6 /* HomeView.swift in Sources */,
+				4D3090982CD45D5A006BA5E1 /* WeatherData.swift in Sources */,
 				9051EFB52C97707200831C64 /* ContentView.swift in Sources */,
 				9051EFB32C97707200831C64 /* Clock_ItApp.swift in Sources */,
 				90B5822E2CD3E36C00B59BB9 /* BounceView.swift in Sources */,
+				4D3090952CD40C93006BA5E1 /* ViewModeByDateView.swift in Sources */,
 				9010EBC92CD3863200EF5F69 /* EmojiView.swift in Sources */,
 				9010EBC32CD3811F00EF5F69 /* TemperatureView.swift in Sources */,
-				9010EBC72CD3850B00EF5F69 /* SizedContentView.swift in Sources */,
 				90C1694E2CC6CD7600E2A6F6 /* ViewMode.swift in Sources */,
 				9084BBF32CCB1CB900F09E74 /* OpenWeather.swift in Sources */,
-				90B582302CD3EBA200B59BB9 /* StatefulView.swift in Sources */,
+				90B582302CD3EBA200B59BB9 /* TimeView.swift in Sources */,
 				9044D0E72CD37B5E00AC1832 /* ClockView.swift in Sources */,
 				90C1694A2CC6CD3A00E2A6F6 /* FlipClockNumberView.swift in Sources */,
 			);

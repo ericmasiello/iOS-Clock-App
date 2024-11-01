@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-struct TemperatureView: View {
-    
+struct TemperatureView: View {  
     var temperatureF: Float
     
     var body: some View {
@@ -19,15 +18,14 @@ struct TemperatureView: View {
                 .font(.title3)
         }
         .monospaced()
-        .foregroundColor(.white)
     }
     
 }
 
 #Preview {
-    Group {
-        TemperatureView(temperatureF: 88.2345)
-    }.padding().background(Color.black)
+  TemperatureView(temperatureF: 88.2345)
+    .padding()
+    .preferredColorScheme(.dark)
 }
 
 

@@ -58,4 +58,5 @@ struct EmojiView: View {
         EmojiView(option: .windy , size: size)
         EmojiView(option: .rain, size: size)
     }
+    .preferredColorScheme(.dark)
 }
