@@ -14,7 +14,7 @@ struct WeatherDataView<Content: View>: View {
     content(weatherData)
       .onAppear {
         Task {
-          let data = await WeatherClient.getWeather()
+          let data = await WeatherClient.getWeather(latitude: 22.22, longitude: 22.22)
 
           guard let data = data else {
             return

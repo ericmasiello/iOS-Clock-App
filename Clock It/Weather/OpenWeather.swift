@@ -10,12 +10,12 @@ import OpenMeteoSdk
 
 /// Make sure the URL contains `&format=flatbuffers`
 enum WeatherClient {
-  static func getWeather() async -> WeatherData? {
+  static func getWeather(latitude: Double, longitude: Double) async -> WeatherData? {
     /**
      * TODO: the lat/long is harcoded. I'll need to access this information via the iOS hardware somehow
      * TODO: this data comes back as a buffer. It works but is difficutl to debug. if you change &format=json it'll be JSON. then i need to figure out how to parse that into a struct. Chat GPT it.
      */
-    let url = URL(string: "https://api.open-meteo.com/v1/forecast?latitude=39.15722&longitude=-77.05496&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,rain,showers,snowfall,weather_code,cloud_cover,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,precipitation_sum,rain_sum,showers_sum,snowfall_sum,precipitation_hours,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timeformat=unixtime&timezone=America%2FNew_York&forecast_days=3&format=flatbuffers")!
+    let url = URL(string: "https://api.open-meteo.com/v1/forecast?latitude=\(latitude)&longitude=\(longitude)&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,rain,showers,snowfall,weather_code,cloud_cover,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,precipitation_sum,rain_sum,showers_sum,snowfall_sum,precipitation_hours,precipitation_probability_max,wind_speed_10m_max,wind_gusts_10m_max&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timeformat=unixtime&timezone=America%2FNew_York&forecast_days=3&format=flatbuffers")!
 
     let responses = try? await WeatherApiResponse.fetch(url: url)
 

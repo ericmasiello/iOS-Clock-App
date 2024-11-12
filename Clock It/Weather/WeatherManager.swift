@@ -6,37 +6,59 @@
 //
 
 import Combine
-import Foundation
+import CoreLocation
 
+enum WeatherError: Error {
+  case invalidResponse
+  case networkError(Error)
+  case invalidData
+}
+
+@MainActor
 class WeatherManager: ObservableObject {
-  // A published property that will update every second
   @Published var weather: WeatherData?
+  @Published var isLoading = true
+  @Published var error: WeatherError?
   
-  private var cancellable: AnyCancellable?
-
-  func fetch() {
+  private var cachedCoordinates: (latitude: Double, longitude: Double)? = nil
     
-    // Use Timer.publish to create a timer that emits every 1 hour
-    self.cancellable = Timer.publish(every: 1.0 * 60 * 60, on: .main, in: .default)
+  private var locationChangeCancellables = Set<AnyCancellable>()
+  private let timerFrequency = 1.0 * 60 * 30 // fetch weather every 30 mins
+  private var timerCancellable: AnyCancellable?
+      
+  init(locationManager: LocationManager) {
+    // Subscribe to location updates
+    locationManager.coordinatesPublisher
+      .sink { [weak self] coordinates in
+        debugPrint("[coordinates change] Fetching Weather Data from WeatherManager")
+        
+        self?.cachedCoordinates = (latitude: coordinates.latitude, longitude: coordinates.longitude)
+        
+        Task {
+          self?.weather = await WeatherClient.getWeather(latitude: coordinates.latitude, longitude: coordinates.longitude)
+        }
+        self?.isLoading = false
+      }
+      .store(in: &locationChangeCancellables)
+    
+    
+    
+    self.timerCancellable = Timer.publish(every: timerFrequency, on: .main, in: .default)
       .autoconnect() // Automatically connect to start receiving updates
       .sink { [weak self] _ in
         Task {
-          print("Fetching Weather Data from WeatherManager - timer")
-          self?.weather = await WeatherClient.getWeather()
+          debugPrint("[timer] Fetching Weather Data from WeatherManager")
+          guard let coordinates = self?.cachedCoordinates else { return }
+          
+          
+          self?.weather = await WeatherClient.getWeather(latitude: coordinates.latitude, longitude: coordinates.longitude)
         }
       }
-    
-    Task {
-      print("Fetching Weather Data from WeatherManager - initial")
-      weather = await WeatherClient.getWeather()
-    }
   }
-
-  init() {
-    fetch()
-  }
-
+  
   deinit {
-    cancellable?.cancel()
+    // cancel all cancellables
+    timerCancellable?.cancel()
+    locationChangeCancellables.forEach { value in value.cancel() }
   }
 }
