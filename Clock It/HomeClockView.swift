@@ -13,15 +13,18 @@ struct HomeClockView: View {
   @StateObject private var locationManager: LocationManager
   @StateObject private var weatherManager: WeatherManager
   @StateObject private var dateTimeManager: DateTimeManager
+  @Binding var isIdleTimerDisabled: Bool
+  
   var handleBackTapped: HandleBackTapped
   
-  init(handleBackTapped: @escaping HandleBackTapped) {
+  init(isIdleTimerDisabled: Binding<Bool>, handleBackTapped: @escaping HandleBackTapped) {
     let lm = LocationManager()
     _locationManager = StateObject(wrappedValue: lm)
     _weatherManager = StateObject(wrappedValue: WeatherManager(locationManager: lm))
     
     _dateTimeManager = StateObject(wrappedValue: DateTimeManager())
     self.handleBackTapped = handleBackTapped
+    self._isIdleTimerDisabled = isIdleTimerDisabled
   }
   
   private var size: CGFloat {
@@ -69,7 +72,7 @@ struct HomeClockView: View {
     .accessibilityLabel(Text("Current time is \(currentTime). Tap to return the main view"))
     .buttonStyle(.plain)
     .onAppear {
-      UIApplication.shared.isIdleTimerDisabled = true
+      UIApplication.shared.isIdleTimerDisabled = isIdleTimerDisabled
     }
     .navigationBarBackButtonHidden()
   }

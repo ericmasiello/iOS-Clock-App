@@ -18,7 +18,7 @@ struct ViewModeByDateView<Content: View>: View {
      * Set full opacity if time >= 6:15 and < 8:00 am
      */
     return switch (hour, minutes) {
-    case (6, let mins) where mins >= 15, (7, let mins):
+    case (6, let mins) where mins >= 25, (7, let mins):
       .active
     default:
       .dim

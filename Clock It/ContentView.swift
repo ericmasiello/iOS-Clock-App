@@ -14,22 +14,34 @@ enum NavigationDestinations: String, CaseIterable, Hashable {
 
 struct ContentView: View {
   let screens = NavigationDestinations.allCases
-  @State private var navigationPath = NavigationPath()
+  
+  // makes the Clock view the initial view
+  @State private var navigationPath = NavigationPath([NavigationDestinations.Clock])
+  @State private var isIdleTimerDisabled: Bool = true
 
   var body: some View {
     NavigationStack(path: $navigationPath) {
-      VStack(spacing: 40) {
-        ForEach(screens, id: \.self) { screen in
-          NavigationLink(value: screen) {
-            Text(screen.rawValue)
+      
+      VStack(alignment: .leading) {
+        Section {
+          List {
+            ForEach(screens, id: \.self) { screen in
+              NavigationLink(value: screen) {
+                Text(screen.rawValue)
+              }
+            }
           }
         }
+        
+        Form {
+          Toggle("Disable Idle Timer", isOn: $isIdleTimerDisabled)
+        }
       }
-      .navigationTitle("Main View")
+      .navigationTitle("Clock It")
       .navigationDestination(for: NavigationDestinations.self) { screen in
         switch screen {
         case .Clock:
-          HomeClockView() {
+          HomeClockView(isIdleTimerDisabled: $isIdleTimerDisabled) {
             navigationPath.removeLast()
           }
         case .Settings:

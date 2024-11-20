@@ -13,7 +13,6 @@ struct BounceView<Content: View>: View {
   @State private var velocity: CGSize = .init(width: 4, height: 4)
   @State private var screenSize: CGSize = .init(width: 0, height: 0) // Default size
   @State private var viewSize: CGSize = .init(width: 0, height: 0)
-  let frameRate = 20.0 / 60.0 // 60 FPS
   let animationDuration = 1.00 // Control speed of animation
 
   func updatePositionAndVelocity() {
@@ -56,13 +55,7 @@ struct BounceView<Content: View>: View {
       position.x = UIScreen.main.bounds.midX
       position.y = UIScreen.main.bounds.midY
 
-      Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-//        withAnimation(.linear(duration: animationDuration)) {
-//          // skip animating until the viewSize is updated by the child view
-//          if viewSize.width > 0 && viewSize.height > 0 {
-//            updatePositionAndVelocity()
-//          }
-//        }
+      Timer.scheduledTimer(withTimeInterval: 0.75, repeats: true) { _ in
         withAnimation(.linear(duration: animationDuration)) {
           // skip animating until the viewSize is updated by the child view
           if viewSize.width > 0 && viewSize.height > 0 {
