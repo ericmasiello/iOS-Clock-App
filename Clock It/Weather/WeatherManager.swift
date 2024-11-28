@@ -41,15 +41,12 @@ class WeatherManager: ObservableObject {
       }
       .store(in: &locationChangeCancellables)
     
-    
-    
     self.timerCancellable = Timer.publish(every: timerFrequency, on: .main, in: .default)
       .autoconnect() // Automatically connect to start receiving updates
       .sink { [weak self] _ in
         Task {
           debugPrint("[timer] Fetching Weather Data from WeatherManager")
           guard let coordinates = self?.cachedCoordinates else { return }
-          
           
           self?.weather = await WeatherClient.getWeather(latitude: coordinates.latitude, longitude: coordinates.longitude)
         }

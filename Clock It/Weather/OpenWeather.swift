@@ -26,10 +26,6 @@ enum WeatherClient {
 
     /// Attributes for timezone and location
     let utcOffsetSeconds = response.utcOffsetSeconds
-    let timezone = response.timezone
-    let timezoneAbbreviation = response.timezoneAbbreviation
-    let latitude = response.latitude
-    let longitude = response.longitude
 
     let current = response.current!
     let daily = response.daily!

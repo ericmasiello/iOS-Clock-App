@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct Clock_ItApp: App {
@@ -14,5 +15,6 @@ struct Clock_ItApp: App {
             ContentView()
                 .preferredColorScheme(.dark)
         }
+        .modelContainer(for: UserConfiguration.self)
     }
 }

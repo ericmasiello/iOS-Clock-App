@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 enum NavigationDestinations: String, CaseIterable, Hashable {
   case Clock
@@ -13,11 +14,11 @@ enum NavigationDestinations: String, CaseIterable, Hashable {
 }
 
 struct ContentView: View {
-  let screens = NavigationDestinations.allCases
+  @Environment(\.modelContext) var modelContext
+  @Query(sort: \UserConfiguration.wakeupTime) var userConfigurations: [UserConfiguration]
   
   // makes the Clock view the initial view
   @State private var navigationPath = NavigationPath([NavigationDestinations.Clock])
-  @State private var isIdleTimerDisabled: Bool = true
 
   var body: some View {
     NavigationStack(path: $navigationPath) {
@@ -25,36 +26,59 @@ struct ContentView: View {
       VStack(alignment: .leading) {
         Section {
           List {
-            ForEach(screens, id: \.self) { screen in
+            ForEach(NavigationDestinations.allCases, id: \.self) { screen in
               NavigationLink(value: screen) {
                 Text(screen.rawValue)
               }
             }
           }
         }
-        
-        Form {
-          Toggle("Disable Idle Timer", isOn: $isIdleTimerDisabled)
-        }
       }
       .navigationTitle("Clock It")
       .navigationDestination(for: NavigationDestinations.self) { screen in
-        switch screen {
-        case .Clock:
-          HomeClockView(isIdleTimerDisabled: $isIdleTimerDisabled) {
-            navigationPath.removeLast()
+        
+        if let config = userConfigurations.first {
+          switch screen {
+          case .Clock:
+            HomeClockView(userConfiguration: config) {
+              navigationPath.removeLast()
+            }
+          case .Settings:
+            SettingsView(userConfiguration: config)
           }
-        case .Settings:
-          SettingsView()
+        } else {
+          Text("Sorry. An error occurred when accessing your configuration")
         }
+        
+        
       }
     }
     .edgesIgnoringSafeArea(.all)
     .statusBar(hidden: true)
     .preferredColorScheme(.dark)
+    .onAppear {
+      guard userConfigurations.count == 0 else {
+        // only need 1 configuration defined
+        return
+      }
+      
+      
+      // initialize with some defaults if not yet set
+      let config = UserConfiguration(wakeupTime: UserConfiguration.createWakeTime(hour: 6, minutes: 15))
+      modelContext.insert(config)
+      navigationPath.append(NavigationDestinations.Settings)
+    }
   }
 }
 
 #Preview {
-  ContentView()
+  do {
+    let config = ModelConfiguration(isStoredInMemoryOnly: true)
+    let container = try ModelContainer(for: UserConfiguration.self, configurations: config)
+
+    return ContentView()
+      .modelContainer(container)
+  } catch {
+    return Text("Failed to create container \(error.localizedDescription)")
+  }
 }

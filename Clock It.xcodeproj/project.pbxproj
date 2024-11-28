@@ -17,6 +17,7 @@
 		4DD880D32CE2E85100453CFD /* HomeClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD880D22CE2E84C00453CFD /* HomeClockView.swift */; };
 		4DD880D52CE2E8EA00453CFD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD880D42CE2E8EA00453CFD /* SettingsView.swift */; };
 		4DD880D72CE2EBB200453CFD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD880D62CE2EBAF00453CFD /* LocationManager.swift */; };
+		4DE077082CED7F2B00552B32 /* UserConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE077072CED7F2B00552B32 /* UserConfiguration.swift */; };
 		9010EBC32CD3811F00EF5F69 /* TemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010EBC22CD3811F00EF5F69 /* TemperatureView.swift */; };
 		9010EBC92CD3863200EF5F69 /* EmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010EBC82CD3863200EF5F69 /* EmojiView.swift */; };
 		9044D0E72CD37B5E00AC1832 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9044D0E62CD37B4900AC1832 /* ClockView.swift */; };
@@ -64,6 +65,7 @@
 		4DD880D22CE2E84C00453CFD /* HomeClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeClockView.swift; sourceTree = "<group>"; };
 		4DD880D42CE2E8EA00453CFD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4DD880D62CE2EBAF00453CFD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		4DE077072CED7F2B00552B32 /* UserConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfiguration.swift; sourceTree = "<group>"; };
 		9010EBC22CD3811F00EF5F69 /* TemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureView.swift; sourceTree = "<group>"; };
 		9010EBC82CD3863200EF5F69 /* EmojiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiView.swift; sourceTree = "<group>"; };
 		9044D0E62CD37B4900AC1832 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
@@ -164,6 +166,14 @@
 			path = Animation;
 			sourceTree = "<group>";
 		};
+		4DD880D82CED7BAB00453CFD /* UserConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				4DE077072CED7F2B00552B32 /* UserConfiguration.swift */,
+			);
+			path = UserConfiguration;
+			sourceTree = "<group>";
+		};
 		9051EFA62C97707200831C64 = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +197,7 @@
 		9051EFB12C97707200831C64 /* Clock It */ = {
 			isa = PBXGroup;
 			children = (
+				4DD880D82CED7BAB00453CFD /* UserConfiguration */,
 				4D30909C2CD45E06006BA5E1 /* Animation */,
 				4D30909B2CD45DFD006BA5E1 /* Emoji */,
 				4D30909A2CD45DD3006BA5E1 /* DateAndTime */,
@@ -382,6 +393,7 @@
 				90B582302CD3EBA200B59BB9 /* TimeView.swift in Sources */,
 				9044D0E72CD37B5E00AC1832 /* ClockView.swift in Sources */,
 				90C1694A2CC6CD3A00E2A6F6 /* FlipClockNumberView.swift in Sources */,
+				4DE077082CED7F2B00552B32 /* UserConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
