@@ -11,9 +11,9 @@ struct BounceView<Content: View>: View {
   @ViewBuilder let content: Content
   @State private var position: CGPoint = .init(x: 0, y: 0)
   @State private var velocity: CGSize = .init(width: 4, height: 4)
-  @State private var screenSize: CGSize = .init(width: 0, height: 0) // Default size
+  @State private var screenSize: CGSize = .init(width: 0, height: 0)  // Default size
   @State private var viewSize: CGSize = .init(width: 0, height: 0)
-  let animationDuration = 1.00 // Control speed of animation
+  let animationDuration = 1.00  // Control speed of animation
 
   func updatePositionAndVelocity() {
     var newPos = position
@@ -39,15 +39,17 @@ struct BounceView<Content: View>: View {
   }
 
   var body: some View {
-    content.background(GeometryReader { contentViewProxy in
-      Color.clear
-        .onAppear {
-          debugPrint("Running Child BounceView onAppear")
-          debugPrint("Total width \(UIScreen.main.bounds.width)")
-          debugPrint("Content view width \(contentViewProxy.size.width)")
-          viewSize = contentViewProxy.size // Measure view size
-        }
-    })
+    content.background(
+      GeometryReader { contentViewProxy in
+        Color.clear
+          .onAppear {
+            debugPrint("Running Child BounceView onAppear")
+            debugPrint("Total width \(UIScreen.main.bounds.width)")
+            debugPrint("Content view width \(contentViewProxy.size.width)")
+            viewSize = contentViewProxy.size  // Measure view size
+          }
+      }
+    )
     .position(position)
     .onAppear {
       debugPrint("Running outer BounceView onAppear")

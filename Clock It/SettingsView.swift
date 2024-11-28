@@ -14,7 +14,8 @@ struct SettingsView: View {
 
   init(userConfiguration: UserConfiguration) {
     self.userConfiguration = userConfiguration
-    self.wakeupTime = userConfiguration.wakeupTime ?? UserConfiguration.createWakeTime(hour: 12, minutes: 0)
+    self.wakeupTime =
+      userConfiguration.wakeupTime ?? UserConfiguration.createWakeTime(hour: 12, minutes: 0)
     self.isIdleTimerDisabled = userConfiguration.isIdleTimerDisabled
   }
 
@@ -50,7 +51,7 @@ struct SettingsView: View {
             return
           }
           self.userConfiguration.isIdleTimerDisabled = newValue
-        }          
+        }
     }
     .navigationTitle("Edit Settings")
     .navigationBarTitleDisplayMode(.inline)
@@ -60,9 +61,10 @@ struct SettingsView: View {
 #Preview {
   let config = ModelConfiguration(isStoredInMemoryOnly: true)
   let container = try! ModelContainer(for: UserConfiguration.self, configurations: config)
-  let userConfig = UserConfiguration(wakeupTime: UserConfiguration.createWakeTime(hour: 6, minutes: 15))
+  let userConfig = UserConfiguration(
+    wakeupTime: UserConfiguration.createWakeTime(hour: 6, minutes: 15))
 
   NavigationStack {
     SettingsView(userConfiguration: userConfig).modelContainer(container)
-  }  
+  }
 }

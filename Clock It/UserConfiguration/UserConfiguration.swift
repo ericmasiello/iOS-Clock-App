@@ -17,21 +17,21 @@ class UserConfiguration {
   init(wakeupTime: Date) {
     self.wakeupTime = wakeupTime
   }
-  
+
   init(wakeupTime: Date, wakeupDuration: Double) {
     self.wakeupTime = wakeupTime
     self.wakeupDuration = wakeupDuration
   }
-  
+
   static func createWakeTime(hour: Int, minutes: Int) -> Date {
-    
+
     let calendar = Calendar.current
     var dateComponents = DateComponents()
     dateComponents.hour = hour
     dateComponents.minute = minutes
 
     let specificTime = calendar.date(from: dateComponents)
-    
+
     return specificTime!
   }
 }

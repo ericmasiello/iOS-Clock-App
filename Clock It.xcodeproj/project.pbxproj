@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D3090932CD40C16006BA5E1 /* WeatherDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3090922CD40C16006BA5E1 /* WeatherDataView.swift */; };
 		4D3090952CD40C93006BA5E1 /* ViewModeByDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3090942CD40C93006BA5E1 /* ViewModeByDateView.swift */; };
 		4D3090982CD45D5A006BA5E1 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3090972CD45D5A006BA5E1 /* WeatherData.swift */; };
 		4D30909F2CD567AF006BA5E1 /* DateTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D30909E2CD567AF006BA5E1 /* DateTimeManager.swift */; };
@@ -55,7 +54,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4D3090922CD40C16006BA5E1 /* WeatherDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataView.swift; sourceTree = "<group>"; };
 		4D3090942CD40C93006BA5E1 /* ViewModeByDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModeByDateView.swift; sourceTree = "<group>"; };
 		4D3090972CD45D5A006BA5E1 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		4D30909E2CD567AF006BA5E1 /* DateTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeManager.swift; sourceTree = "<group>"; };
@@ -121,7 +119,6 @@
 				9010EBC22CD3811F00EF5F69 /* TemperatureView.swift */,
 				9084BBF22CCB1CB600F09E74 /* OpenWeather.swift */,
 				4D3090972CD45D5A006BA5E1 /* WeatherData.swift */,
-				4D3090922CD40C16006BA5E1 /* WeatherDataView.swift */,
 				4D3090A02CD567FB006BA5E1 /* WeatherManager.swift */,
 			);
 			path = Weather;
@@ -372,7 +369,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D3090932CD40C16006BA5E1 /* WeatherDataView.swift in Sources */,
 				4DD880D32CE2E85100453CFD /* HomeClockView.swift in Sources */,
 				90C1694C2CC6CD4E00E2A6F6 /* DateExtension.swift in Sources */,
 				4D30909F2CD567AF006BA5E1 /* DateTimeManager.swift in Sources */,

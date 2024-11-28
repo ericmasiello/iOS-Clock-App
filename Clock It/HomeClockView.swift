@@ -14,19 +14,19 @@ struct HomeClockView: View {
   @StateObject private var locationManager: LocationManager
   @StateObject private var weatherManager: WeatherManager
   @StateObject private var dateTimeManager: DateTimeManager
-  
+
   var handleBackTapped: HandleBackTapped
-  
+
   init(userConfiguration: UserConfiguration, handleBackTapped: @escaping HandleBackTapped) {
     self.userConfiguration = userConfiguration
     let lm = LocationManager()
     _locationManager = StateObject(wrappedValue: lm)
     _weatherManager = StateObject(wrappedValue: WeatherManager(locationManager: lm))
-    
+
     _dateTimeManager = StateObject(wrappedValue: DateTimeManager())
-    self.handleBackTapped = handleBackTapped    
+    self.handleBackTapped = handleBackTapped
   }
-  
+
   func formatTime(_ date: Date?) -> String {
     guard let date = date else {
       return "Unknown"
@@ -34,10 +34,10 @@ struct HomeClockView: View {
 
     let formatter = DateFormatter()
     formatter.dateFormat = "h:mm a"
-    
+
     return formatter.string(from: date)
   }
-  
+
   private var size: CGFloat {
     let denominator = 5.0
     let fudge = (((denominator - 1) * 2) * -1) - 32
@@ -50,18 +50,19 @@ struct HomeClockView: View {
   }
 
   private var viewMode: ViewMode {
-    
+
     guard let wakeupTime = userConfiguration.wakeupTime else {
       return .dim
     }
-    
-    return ViewModeManager.mode(by: dateTimeManager.now, wakeup: wakeupTime, wakeupDuration: userConfiguration.wakeupDuration)
+
+    return ViewModeManager.mode(
+      by: dateTimeManager.now, wakeup: wakeupTime, wakeupDuration: userConfiguration.wakeupDuration)
   }
-  
+
   private var currentTime: String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "HH:mm"
-    
+
     return dateFormatter.string(from: Date.now)
   }
 
@@ -82,7 +83,7 @@ struct HomeClockView: View {
               .opacity(weatherManager.weather?.current.temperature2m == nil ? 0.0 : 1.0)
           }
         }
-        .fixedSize() // constrains it to widest element
+        .fixedSize()  // constrains it to widest element
         .opacity(viewMode == .dim ? 0.65 : 1)
       }
     }

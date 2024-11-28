@@ -7,19 +7,19 @@
 
 import SwiftUI
 
-struct TemperatureView: View {  
-    var temperatureF: Float
-    
-    var body: some View {
-        Group {
-            Text("\(Int(temperatureF.rounded()))")
-                .font(.largeTitle) +
-            Text("℉")
-                .font(.title3)
-        }
-        .monospaced()
+struct TemperatureView: View {
+  var temperatureF: Float
+
+  var body: some View {
+    Group {
+      Text("\(Int(temperatureF.rounded()))")
+        .font(.largeTitle)
+        + Text("℉")
+        .font(.title3)
     }
-    
+    .monospaced()
+  }
+
 }
 
 #Preview {
@@ -27,5 +27,3 @@ struct TemperatureView: View {
     .padding()
     .preferredColorScheme(.dark)
 }
-
-
