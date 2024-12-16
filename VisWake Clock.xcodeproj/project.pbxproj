@@ -1,0 +1,788 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D3090952CD40C93006BA5E1 /* ViewModeByDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3090942CD40C93006BA5E1 /* ViewModeByDateView.swift */; };
+		4D3090982CD45D5A006BA5E1 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3090972CD45D5A006BA5E1 /* WeatherData.swift */; };
+		4D30909F2CD567AF006BA5E1 /* DateTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D30909E2CD567AF006BA5E1 /* DateTimeManager.swift */; };
+		4D3090A12CD567FB006BA5E1 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3090A02CD567FB006BA5E1 /* WeatherManager.swift */; };
+		4D3090A32CD58649006BA5E1 /* ViewModeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3090A22CD58649006BA5E1 /* ViewModeManager.swift */; };
+		4D3090A52CD5882F006BA5E1 /* EmojiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3090A42CD5882F006BA5E1 /* EmojiManager.swift */; };
+		4D8205AE2D1087A900326AC9 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8205AD2D1087A900326AC9 /* LoadingView.swift */; };
+		4D8205B02D1090DB00326AC9 /* DataResolverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8205AF2D1090DB00326AC9 /* DataResolverView.swift */; };
+		4DD880D32CE2E85100453CFD /* HomeClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD880D22CE2E84C00453CFD /* HomeClockView.swift */; };
+		4DD880D52CE2E8EA00453CFD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD880D42CE2E8EA00453CFD /* SettingsView.swift */; };
+		4DD880D72CE2EBB200453CFD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD880D62CE2EBAF00453CFD /* LocationManager.swift */; };
+		4DE077082CED7F2B00552B32 /* UserConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE077072CED7F2B00552B32 /* UserConfiguration.swift */; };
+		9010EBC32CD3811F00EF5F69 /* TemperatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010EBC22CD3811F00EF5F69 /* TemperatureView.swift */; };
+		9010EBC92CD3863200EF5F69 /* EmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010EBC82CD3863200EF5F69 /* EmojiView.swift */; };
+		9044D0E72CD37B5E00AC1832 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9044D0E62CD37B4900AC1832 /* ClockView.swift */; };
+		9051EFB32C97707200831C64 /* VisWake_ClockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051EFB22C97707200831C64 /* VisWake_ClockApp.swift */; };
+		9051EFB52C97707200831C64 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051EFB42C97707200831C64 /* ContentView.swift */; };
+		9051EFB72C97707300831C64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9051EFB62C97707300831C64 /* Assets.xcassets */; };
+		9051EFBB2C97707300831C64 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9051EFBA2C97707300831C64 /* Preview Assets.xcassets */; };
+		9051EFCF2C97707300831C64 /* VisWake_ClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051EFCE2C97707300831C64 /* VisWake_ClockUITests.swift */; };
+		9051EFD12C97707300831C64 /* VisWake_ClockUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9051EFD02C97707300831C64 /* VisWake_ClockUITestsLaunchTests.swift */; };
+		9084BBF12CCB1CAB00F09E74 /* OpenMeteoSdk in Frameworks */ = {isa = PBXBuildFile; productRef = 9084BBF02CCB1CAB00F09E74 /* OpenMeteoSdk */; };
+		9084BBF32CCB1CB900F09E74 /* OpenWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9084BBF22CCB1CB600F09E74 /* OpenWeather.swift */; };
+		90B5822E2CD3E36C00B59BB9 /* BounceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B5822D2CD3E36C00B59BB9 /* BounceView.swift */; };
+		90B582302CD3EBA200B59BB9 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B5822F2CD3EBA200B59BB9 /* TimeView.swift */; };
+		90C1694A2CC6CD3A00E2A6F6 /* FlipClockNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C169492CC6CD3A00E2A6F6 /* FlipClockNumberView.swift */; };
+		90C1694C2CC6CD4E00E2A6F6 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C1694B2CC6CD4E00E2A6F6 /* DateExtension.swift */; };
+		90C1694E2CC6CD7600E2A6F6 /* ViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C1694D2CC6CD7600E2A6F6 /* ViewMode.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9051EFC12C97707300831C64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9051EFA72C97707200831C64 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9051EFAE2C97707200831C64;
+			remoteInfo = "VisWake Clock";
+		};
+		9051EFCB2C97707300831C64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9051EFA72C97707200831C64 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9051EFAE2C97707200831C64;
+			remoteInfo = "VisWake Clock";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4D3090942CD40C93006BA5E1 /* ViewModeByDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModeByDateView.swift; sourceTree = "<group>"; };
+		4D3090972CD45D5A006BA5E1 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		4D30909E2CD567AF006BA5E1 /* DateTimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeManager.swift; sourceTree = "<group>"; };
+		4D3090A02CD567FB006BA5E1 /* WeatherManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
+		4D3090A22CD58649006BA5E1 /* ViewModeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModeManager.swift; sourceTree = "<group>"; };
+		4D3090A42CD5882F006BA5E1 /* EmojiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiManager.swift; sourceTree = "<group>"; };
+		4D8205AD2D1087A900326AC9 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		4D8205AF2D1090DB00326AC9 /* DataResolverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResolverView.swift; sourceTree = "<group>"; };
+		4DD880D22CE2E84C00453CFD /* HomeClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeClockView.swift; sourceTree = "<group>"; };
+		4DD880D42CE2E8EA00453CFD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4DD880D62CE2EBAF00453CFD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		4DE077072CED7F2B00552B32 /* UserConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfiguration.swift; sourceTree = "<group>"; };
+		9010EBC22CD3811F00EF5F69 /* TemperatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureView.swift; sourceTree = "<group>"; };
+		9010EBC82CD3863200EF5F69 /* EmojiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiView.swift; sourceTree = "<group>"; };
+		9044D0E62CD37B4900AC1832 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		9051EFAF2C97707200831C64 /* VisWake Clock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VisWake Clock.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9051EFB22C97707200831C64 /* VisWake_ClockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisWake_ClockApp.swift; sourceTree = "<group>"; };
+		9051EFB42C97707200831C64 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9051EFB62C97707300831C64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9051EFB82C97707300831C64 /* VisWake_Clock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VisWake_Clock.entitlements; sourceTree = "<group>"; };
+		9051EFBA2C97707300831C64 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9051EFC02C97707300831C64 /* VisWake ClockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VisWake ClockTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9051EFCA2C97707300831C64 /* VisWake ClockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VisWake ClockUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9051EFCE2C97707300831C64 /* VisWake_ClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisWake_ClockUITests.swift; sourceTree = "<group>"; };
+		9051EFD02C97707300831C64 /* VisWake_ClockUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisWake_ClockUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9084BBF22CCB1CB600F09E74 /* OpenWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeather.swift; sourceTree = "<group>"; };
+		90B5822D2CD3E36C00B59BB9 /* BounceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceView.swift; sourceTree = "<group>"; };
+		90B5822F2CD3EBA200B59BB9 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
+		90C169492CC6CD3A00E2A6F6 /* FlipClockNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipClockNumberView.swift; sourceTree = "<group>"; };
+		90C1694B2CC6CD4E00E2A6F6 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		90C1694D2CC6CD7600E2A6F6 /* ViewMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMode.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9051EFAC2C97707200831C64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9084BBF12CCB1CAB00F09E74 /* OpenMeteoSdk in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9051EFBD2C97707300831C64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9051EFC72C97707300831C64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4D3090962CD45D42006BA5E1 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				4DD880D62CE2EBAF00453CFD /* LocationManager.swift */,
+				9010EBC22CD3811F00EF5F69 /* TemperatureView.swift */,
+				9084BBF22CCB1CB600F09E74 /* OpenWeather.swift */,
+				4D3090972CD45D5A006BA5E1 /* WeatherData.swift */,
+				4D3090A02CD567FB006BA5E1 /* WeatherManager.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		4D3090992CD45DAB006BA5E1 /* ViewMode */ = {
+			isa = PBXGroup;
+			children = (
+				4D3090942CD40C93006BA5E1 /* ViewModeByDateView.swift */,
+				90C1694D2CC6CD7600E2A6F6 /* ViewMode.swift */,
+				4D3090A22CD58649006BA5E1 /* ViewModeManager.swift */,
+			);
+			path = ViewMode;
+			sourceTree = "<group>";
+		};
+		4D30909A2CD45DD3006BA5E1 /* DateAndTime */ = {
+			isa = PBXGroup;
+			children = (
+				90C1694B2CC6CD4E00E2A6F6 /* DateExtension.swift */,
+				90C169492CC6CD3A00E2A6F6 /* FlipClockNumberView.swift */,
+				9044D0E62CD37B4900AC1832 /* ClockView.swift */,
+				90B5822F2CD3EBA200B59BB9 /* TimeView.swift */,
+				4D30909E2CD567AF006BA5E1 /* DateTimeManager.swift */,
+			);
+			path = DateAndTime;
+			sourceTree = "<group>";
+		};
+		4D30909B2CD45DFD006BA5E1 /* Emoji */ = {
+			isa = PBXGroup;
+			children = (
+				9010EBC82CD3863200EF5F69 /* EmojiView.swift */,
+				4D3090A42CD5882F006BA5E1 /* EmojiManager.swift */,
+			);
+			path = Emoji;
+			sourceTree = "<group>";
+		};
+		4D30909C2CD45E06006BA5E1 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				90B5822D2CD3E36C00B59BB9 /* BounceView.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		4D8205AC2D10877600326AC9 /* CommonUI */ = {
+			isa = PBXGroup;
+			children = (
+				4D8205AD2D1087A900326AC9 /* LoadingView.swift */,
+			);
+			path = CommonUI;
+			sourceTree = "<group>";
+		};
+		4DD880D82CED7BAB00453CFD /* UserConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				4DE077072CED7F2B00552B32 /* UserConfiguration.swift */,
+				4D8205AF2D1090DB00326AC9 /* DataResolverView.swift */,
+			);
+			path = UserConfiguration;
+			sourceTree = "<group>";
+		};
+		9051EFA62C97707200831C64 = {
+			isa = PBXGroup;
+			children = (
+				9051EFB12C97707200831C64 /* VisWake Clock */,
+				9051EFCD2C97707300831C64 /* VisWake ClockUITests */,
+				9051EFB02C97707200831C64 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9051EFB02C97707200831C64 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9051EFAF2C97707200831C64 /* VisWake Clock.app */,
+				9051EFC02C97707300831C64 /* VisWake ClockTests.xctest */,
+				9051EFCA2C97707300831C64 /* VisWake ClockUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9051EFB12C97707200831C64 /* VisWake Clock */ = {
+			isa = PBXGroup;
+			children = (
+				4D8205AC2D10877600326AC9 /* CommonUI */,
+				4DD880D82CED7BAB00453CFD /* UserConfiguration */,
+				4D30909C2CD45E06006BA5E1 /* Animation */,
+				4D30909B2CD45DFD006BA5E1 /* Emoji */,
+				4D30909A2CD45DD3006BA5E1 /* DateAndTime */,
+				4D3090992CD45DAB006BA5E1 /* ViewMode */,
+				4D3090962CD45D42006BA5E1 /* Weather */,
+				9051EFB22C97707200831C64 /* VisWake_ClockApp.swift */,
+				9051EFB42C97707200831C64 /* ContentView.swift */,
+				4DD880D22CE2E84C00453CFD /* HomeClockView.swift */,
+				4DD880D42CE2E8EA00453CFD /* SettingsView.swift */,
+				9051EFB62C97707300831C64 /* Assets.xcassets */,
+				9051EFB82C97707300831C64 /* VisWake_Clock.entitlements */,
+				9051EFB92C97707300831C64 /* Preview Content */,
+			);
+			path = "VisWake Clock";
+			sourceTree = "<group>";
+		};
+		9051EFB92C97707300831C64 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9051EFBA2C97707300831C64 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9051EFCD2C97707300831C64 /* VisWake ClockUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9051EFCE2C97707300831C64 /* VisWake_ClockUITests.swift */,
+				9051EFD02C97707300831C64 /* VisWake_ClockUITestsLaunchTests.swift */,
+			);
+			path = "VisWake ClockUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9051EFAE2C97707200831C64 /* VisWake Clock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9051EFD42C97707300831C64 /* Build configuration list for PBXNativeTarget "VisWake Clock" */;
+			buildPhases = (
+				9051EFAB2C97707200831C64 /* Sources */,
+				9051EFAC2C97707200831C64 /* Frameworks */,
+				9051EFAD2C97707200831C64 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VisWake Clock";
+			productName = "VisWake Clock";
+			productReference = 9051EFAF2C97707200831C64 /* VisWake Clock.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9051EFBF2C97707300831C64 /* VisWake ClockTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9051EFD72C97707300831C64 /* Build configuration list for PBXNativeTarget "VisWake ClockTests" */;
+			buildPhases = (
+				9051EFBC2C97707300831C64 /* Sources */,
+				9051EFBD2C97707300831C64 /* Frameworks */,
+				9051EFBE2C97707300831C64 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9051EFC22C97707300831C64 /* PBXTargetDependency */,
+			);
+			name = "VisWake ClockTests";
+			productName = "VisWake ClockTests";
+			productReference = 9051EFC02C97707300831C64 /* VisWake ClockTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9051EFC92C97707300831C64 /* VisWake ClockUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9051EFDA2C97707300831C64 /* Build configuration list for PBXNativeTarget "VisWake ClockUITests" */;
+			buildPhases = (
+				9051EFC62C97707300831C64 /* Sources */,
+				9051EFC72C97707300831C64 /* Frameworks */,
+				9051EFC82C97707300831C64 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9051EFCC2C97707300831C64 /* PBXTargetDependency */,
+			);
+			name = "VisWake ClockUITests";
+			productName = "VisWake ClockUITests";
+			productReference = 9051EFCA2C97707300831C64 /* VisWake ClockUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9051EFA72C97707200831C64 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1610;
+				TargetAttributes = {
+					9051EFAE2C97707200831C64 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					9051EFBF2C97707300831C64 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 9051EFAE2C97707200831C64;
+					};
+					9051EFC92C97707300831C64 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 9051EFAE2C97707200831C64;
+					};
+				};
+			};
+			buildConfigurationList = 9051EFAA2C97707200831C64 /* Build configuration list for PBXProject "VisWake Clock" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9051EFA62C97707200831C64;
+			packageReferences = (
+				9084BBEF2CCB1CAB00F09E74 /* XCRemoteSwiftPackageReference "sdk" */,
+			);
+			productRefGroup = 9051EFB02C97707200831C64 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9051EFAE2C97707200831C64 /* VisWake Clock */,
+				9051EFBF2C97707300831C64 /* VisWake ClockTests */,
+				9051EFC92C97707300831C64 /* VisWake ClockUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9051EFAD2C97707200831C64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9051EFBB2C97707300831C64 /* Preview Assets.xcassets in Resources */,
+				9051EFB72C97707300831C64 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9051EFBE2C97707300831C64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9051EFC82C97707300831C64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9051EFAB2C97707200831C64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4DD880D32CE2E85100453CFD /* HomeClockView.swift in Sources */,
+				4D8205B02D1090DB00326AC9 /* DataResolverView.swift in Sources */,
+				90C1694C2CC6CD4E00E2A6F6 /* DateExtension.swift in Sources */,
+				4D30909F2CD567AF006BA5E1 /* DateTimeManager.swift in Sources */,
+				4D8205AE2D1087A900326AC9 /* LoadingView.swift in Sources */,
+				4D3090982CD45D5A006BA5E1 /* WeatherData.swift in Sources */,
+				4DD880D52CE2E8EA00453CFD /* SettingsView.swift in Sources */,
+				4D3090A52CD5882F006BA5E1 /* EmojiManager.swift in Sources */,
+				9051EFB52C97707200831C64 /* ContentView.swift in Sources */,
+				9051EFB32C97707200831C64 /* VisWake_ClockApp.swift in Sources */,
+				90B5822E2CD3E36C00B59BB9 /* BounceView.swift in Sources */,
+				4D3090952CD40C93006BA5E1 /* ViewModeByDateView.swift in Sources */,
+				9010EBC92CD3863200EF5F69 /* EmojiView.swift in Sources */,
+				9010EBC32CD3811F00EF5F69 /* TemperatureView.swift in Sources */,
+				4D3090A12CD567FB006BA5E1 /* WeatherManager.swift in Sources */,
+				90C1694E2CC6CD7600E2A6F6 /* ViewMode.swift in Sources */,
+				9084BBF32CCB1CB900F09E74 /* OpenWeather.swift in Sources */,
+				4D3090A32CD58649006BA5E1 /* ViewModeManager.swift in Sources */,
+				4DD880D72CE2EBB200453CFD /* LocationManager.swift in Sources */,
+				90B582302CD3EBA200B59BB9 /* TimeView.swift in Sources */,
+				9044D0E72CD37B5E00AC1832 /* ClockView.swift in Sources */,
+				90C1694A2CC6CD3A00E2A6F6 /* FlipClockNumberView.swift in Sources */,
+				4DE077082CED7F2B00552B32 /* UserConfiguration.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9051EFBC2C97707300831C64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9051EFC62C97707300831C64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9051EFD12C97707300831C64 /* VisWake_ClockUITestsLaunchTests.swift in Sources */,
+				9051EFCF2C97707300831C64 /* VisWake_ClockUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9051EFC22C97707300831C64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9051EFAE2C97707200831C64 /* VisWake Clock */;
+			targetProxy = 9051EFC12C97707300831C64 /* PBXContainerItemProxy */;
+		};
+		9051EFCC2C97707300831C64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9051EFAE2C97707200831C64 /* VisWake Clock */;
+			targetProxy = 9051EFCB2C97707300831C64 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9051EFD22C97707300831C64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9051EFD32C97707300831C64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		9051EFD52C97707300831C64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "VisWake Clock/VisWake_Clock.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"VisWake Clock/Preview Content\"";
+				DEVELOPMENT_TEAM = R6SSQ5A38J;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "VisWake Clock";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We require your location to get the local weather";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.synbydesign.VisWake-Clock";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9051EFD62C97707300831C64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "VisWake Clock/VisWake_Clock.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"VisWake Clock/Preview Content\"";
+				DEVELOPMENT_TEAM = R6SSQ5A38J;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "VisWake Clock";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We require your location to get the local weather";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.synbydesign.VisWake-Clock";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9051EFD82C97707300831C64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = R6SSQ5A38J;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.synbydesign.VisWake-ClockTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VisWake Clock.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VisWake Clock";
+			};
+			name = Debug;
+		};
+		9051EFD92C97707300831C64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = R6SSQ5A38J;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.synbydesign.VisWake-ClockTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VisWake Clock.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/VisWake Clock";
+			};
+			name = Release;
+		};
+		9051EFDB2C97707300831C64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = R6SSQ5A38J;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.synbydesign.VisWake-ClockUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "VisWake Clock";
+			};
+			name = Debug;
+		};
+		9051EFDC2C97707300831C64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = R6SSQ5A38J;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.synbydesign.VisWake-ClockUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "VisWake Clock";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9051EFAA2C97707200831C64 /* Build configuration list for PBXProject "VisWake Clock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9051EFD22C97707300831C64 /* Debug */,
+				9051EFD32C97707300831C64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9051EFD42C97707300831C64 /* Build configuration list for PBXNativeTarget "VisWake Clock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9051EFD52C97707300831C64 /* Debug */,
+				9051EFD62C97707300831C64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9051EFD72C97707300831C64 /* Build configuration list for PBXNativeTarget "VisWake ClockTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9051EFD82C97707300831C64 /* Debug */,
+				9051EFD92C97707300831C64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9051EFDA2C97707300831C64 /* Build configuration list for PBXNativeTarget "VisWake ClockUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9051EFDB2C97707300831C64 /* Debug */,
+				9051EFDC2C97707300831C64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9084BBEF2CCB1CAB00F09E74 /* XCRemoteSwiftPackageReference "sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/open-meteo/sdk.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9084BBF02CCB1CAB00F09E74 /* OpenMeteoSdk */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9084BBEF2CCB1CAB00F09E74 /* XCRemoteSwiftPackageReference "sdk" */;
+			productName = OpenMeteoSdk;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 9051EFA72C97707200831C64 /* Project object */;
+}
