@@ -21,10 +21,11 @@ class WeatherManager: ObservableObject {
   @Published var error: WeatherError?
 
   private var cachedCoordinates: (latitude: Double, longitude: Double)? = nil
-
   private var locationChangeCancellables = Set<AnyCancellable>()
   private let timerFrequency = 1.0 * 60 * 30  // fetch weather every 30 mins
   private var timerCancellable: AnyCancellable?
+  private var coordinateChangeTask: Task<Void, Never>?
+  private var timerTask: Task<Void, Never>?
 
   init(locationManager: LocationManager) {
     // Subscribe to location updates
@@ -34,10 +35,12 @@ class WeatherManager: ObservableObject {
 
         self?.cachedCoordinates = (latitude: coordinates.latitude, longitude: coordinates.longitude)
 
-        Task {
+        self?.coordinateChangeTask = Task {
           self?.weather = await WeatherClient.getWeather(
             latitude: coordinates.latitude, longitude: coordinates.longitude)
         }
+        
+        
         self?.isLoading = false
       }
       .store(in: &locationChangeCancellables)
@@ -45,7 +48,7 @@ class WeatherManager: ObservableObject {
     self.timerCancellable = Timer.publish(every: timerFrequency, on: .main, in: .default)
       .autoconnect()  // Automatically connect to start receiving updates
       .sink { [weak self] _ in
-        Task {
+        self?.timerTask = Task {
           debugPrint("[timer] Fetching Weather Data from WeatherManager")
           guard let coordinates = self?.cachedCoordinates else { return }
 
@@ -59,5 +62,7 @@ class WeatherManager: ObservableObject {
     // cancel all cancellables
     timerCancellable?.cancel()
     locationChangeCancellables.forEach { value in value.cancel() }
+    timerTask?.cancel()
+    coordinateChangeTask?.cancel()
   }
 }
