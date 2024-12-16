@@ -14,70 +14,34 @@ enum NavigationDestinations: String, CaseIterable, Hashable {
 }
 
 struct ContentView: View {
-  @Environment(\.modelContext) var modelContext
-  @Query(sort: \UserConfiguration.wakeupTime) var userConfigurations: [UserConfiguration]
-
-  // makes the Clock view the initial view
-  @State private var navigationPath = NavigationPath([NavigationDestinations.Clock])
+  let userConfig: UserConfiguration
+  @State private var navigationPath = NavigationPath()
 
   var body: some View {
+    
+    let handleTapBack: HandleBackTapped = {
+      navigationPath.append(NavigationDestinations.Settings)
+    }
+    
     NavigationStack(path: $navigationPath) {
-
-      VStack(alignment: .leading) {
-        Section {
-          List {
-            ForEach(NavigationDestinations.allCases, id: \.self) { screen in
-              NavigationLink(value: screen) {
-                Text(screen.rawValue)
-              }
-            }
-          }
-        }
-      }
-      .navigationTitle("Clock It")
+      HomeClockView(userConfiguration: userConfig, handleBackTapped: handleTapBack)
       .navigationDestination(for: NavigationDestinations.self) { screen in
-
-        if let config = userConfigurations.first {
-          switch screen {
-          case .Clock:
-            HomeClockView(userConfiguration: config) {
-              navigationPath.removeLast()
-            }
-          case .Settings:
-            SettingsView(userConfiguration: config)
-          }
-        } else {
-          Text("Sorry. An error occurred when accessing your configuration")
+        switch screen {
+        case .Settings:
+          SettingsView(userConfiguration: userConfig)
+        default:
+          HomeClockView(userConfiguration: userConfig, handleBackTapped: handleTapBack)
         }
-
       }
     }
     .edgesIgnoringSafeArea(.all)
     .statusBar(hidden: true)
-    .preferredColorScheme(.dark)
-    .onAppear {
-      guard userConfigurations.count == 0 else {
-        // only need 1 configuration defined
-        return
-      }
-
-      // initialize with some defaults if not yet set
-      let config = UserConfiguration(
-        wakeupTime: UserConfiguration.createWakeTime(hour: 6, minutes: 15))
-      modelContext.insert(config)
-      navigationPath.append(NavigationDestinations.Settings)
-    }
   }
 }
 
 #Preview {
-  do {
-    let config = ModelConfiguration(isStoredInMemoryOnly: true)
-    let container = try ModelContainer(for: UserConfiguration.self, configurations: config)
-
-    return ContentView()
-      .modelContainer(container)
-  } catch {
-    return Text("Failed to create container \(error.localizedDescription)")
-  }
+  let userConfig = UserConfiguration(wakeupTime: UserConfiguration.createWakeTime(hour: 8, minutes: 15))
+  
+  return ContentView(userConfig: userConfig)
+    .preferredColorScheme(.dark)
 }

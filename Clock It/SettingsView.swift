@@ -45,7 +45,7 @@ struct SettingsView: View {
         self.userConfiguration.wakeupTime = newValue
       }
 
-      Toggle("Disable Idle Timer", isOn: $isIdleTimerDisabled)
+      Toggle("Keep screen on", isOn: $isIdleTimerDisabled)
         .onChange(of: isIdleTimerDisabled) { _, newValue in
           if newValue == self.userConfiguration.isIdleTimerDisabled {
             return
