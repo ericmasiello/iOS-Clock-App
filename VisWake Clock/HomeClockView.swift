@@ -75,6 +75,7 @@ struct HomeClockView: View {
           if viewMode == .active {
             EmojiView(option: emojiOption, size: size)
           }
+          DaysUntilView(events: userConfiguration.countdownEvents).padding(.bottom, 8).font(.headline)
           ClockView(size: size, viewMode: viewMode, now: dateTimeManager.now)
           HStack {
             Text("Wake up time \(formatTime(userConfiguration.wakeupTime))")

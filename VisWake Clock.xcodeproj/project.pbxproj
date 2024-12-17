@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		076F6413621549B8A3C3D032 /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = ECF54344C0B2420B9E54E156 /* Sentry */; };
 		4D3090952CD40C93006BA5E1 /* ViewModeByDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3090942CD40C93006BA5E1 /* ViewModeByDateView.swift */; };
 		4D3090982CD45D5A006BA5E1 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3090972CD45D5A006BA5E1 /* WeatherData.swift */; };
 		4D30909F2CD567AF006BA5E1 /* DateTimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D30909E2CD567AF006BA5E1 /* DateTimeManager.swift */; };
@@ -15,6 +16,9 @@
 		4D3090A52CD5882F006BA5E1 /* EmojiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3090A42CD5882F006BA5E1 /* EmojiManager.swift */; };
 		4D8205AE2D1087A900326AC9 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8205AD2D1087A900326AC9 /* LoadingView.swift */; };
 		4D8205B02D1090DB00326AC9 /* DataResolverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8205AF2D1090DB00326AC9 /* DataResolverView.swift */; };
+		4DD506062D12158300560F5E /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		4DD506072D12158300560F5E /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		4DD5060A2D12277F00560F5E /* DaysUntilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD506092D12277400560F5E /* DaysUntilView.swift */; };
 		4DD880D32CE2E85100453CFD /* HomeClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD880D22CE2E84C00453CFD /* HomeClockView.swift */; };
 		4DD880D52CE2E8EA00453CFD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD880D42CE2E8EA00453CFD /* SettingsView.swift */; };
 		4DD880D72CE2EBB200453CFD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD880D62CE2EBAF00453CFD /* LocationManager.swift */; };
@@ -35,7 +39,6 @@
 		90C1694A2CC6CD3A00E2A6F6 /* FlipClockNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C169492CC6CD3A00E2A6F6 /* FlipClockNumberView.swift */; };
 		90C1694C2CC6CD4E00E2A6F6 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C1694B2CC6CD4E00E2A6F6 /* DateExtension.swift */; };
 		90C1694E2CC6CD7600E2A6F6 /* ViewMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C1694D2CC6CD7600E2A6F6 /* ViewMode.swift */; };
-		076F6413621549B8A3C3D032 /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = ECF54344C0B2420B9E54E156 /* Sentry */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,7 @@
 		4D3090A42CD5882F006BA5E1 /* EmojiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiManager.swift; sourceTree = "<group>"; };
 		4D8205AD2D1087A900326AC9 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		4D8205AF2D1090DB00326AC9 /* DataResolverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataResolverView.swift; sourceTree = "<group>"; };
+		4DD506092D12277400560F5E /* DaysUntilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysUntilView.swift; sourceTree = "<group>"; };
 		4DD880D22CE2E84C00453CFD /* HomeClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeClockView.swift; sourceTree = "<group>"; };
 		4DD880D42CE2E8EA00453CFD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4DD880D62CE2EBAF00453CFD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -103,7 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				076F6413621549B8A3C3D032 /* Sentry in Frameworks */,
+				4DD506062D12158300560F5E /* (null) in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,7 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				076F6413621549B8A3C3D032 /* Sentry in Frameworks */,
+				4DD506072D12158300560F5E /* (null) in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +181,14 @@
 			path = CommonUI;
 			sourceTree = "<group>";
 		};
+		4DD506082D12275F00560F5E /* Custom Events */ = {
+			isa = PBXGroup;
+			children = (
+				4DD506092D12277400560F5E /* DaysUntilView.swift */,
+			);
+			path = "Custom Events";
+			sourceTree = "<group>";
+		};
 		4DD880D82CED7BAB00453CFD /* UserConfiguration */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +220,7 @@
 		9051EFB12C97707200831C64 /* VisWake Clock */ = {
 			isa = PBXGroup;
 			children = (
+				4DD506082D12275F00560F5E /* Custom Events */,
 				4D8205AC2D10877600326AC9 /* CommonUI */,
 				4DD880D82CED7BAB00453CFD /* UserConfiguration */,
 				4D30909C2CD45E06006BA5E1 /* Animation */,
@@ -260,12 +273,12 @@
 			dependencies = (
 			);
 			name = "VisWake Clock";
-			productName = "VisWake Clock";
-			productReference = 9051EFAF2C97707200831C64 /* VisWake Clock.app */;
-			productType = "com.apple.product-type.application";
 			packageProductDependencies = (
 				ECF54344C0B2420B9E54E156 /* Sentry */,
 			);
+			productName = "VisWake Clock";
+			productReference = 9051EFAF2C97707200831C64 /* VisWake Clock.app */;
+			productType = "com.apple.product-type.application";
 		};
 		9051EFBF2C97707300831C64 /* VisWake ClockTests */ = {
 			isa = PBXNativeTarget;
@@ -376,6 +389,24 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F242EE5486FE43F8AF2C7B66 /* Upload Debug Symbols to Sentry */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+			);
+			name = "Upload Debug Symbols to Sentry";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This script is responsable to upload debug symbols and source context for Sentry.\nif which sentry-cli >/dev/null; then\nexport SENTRY_ORG=syn-by-design\nexport SENTRY_PROJECT=vizwake-clock\nERROR=$(sentry-cli debug-files upload --include-sources \"$DWARF_DSYM_FOLDER_PATH\" 2>&1 >/dev/null)\nif [ ! $? -eq 0 ]; then\necho \"warning: sentry-cli - $ERROR\"\nfi\nelse\necho \"warning: sentry-cli not installed, download from https://github.com/getsentry/sentry-cli/releases\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9051EFAB2C97707200831C64 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -387,6 +418,7 @@
 				4D30909F2CD567AF006BA5E1 /* DateTimeManager.swift in Sources */,
 				4D8205AE2D1087A900326AC9 /* LoadingView.swift in Sources */,
 				4D3090982CD45D5A006BA5E1 /* WeatherData.swift in Sources */,
+				4DD5060A2D12277F00560F5E /* DaysUntilView.swift in Sources */,
 				4DD880D52CE2E8EA00453CFD /* SettingsView.swift in Sources */,
 				4D3090A52CD5882F006BA5E1 /* EmojiManager.swift in Sources */,
 				9051EFB52C97707200831C64 /* ContentView.swift in Sources */,
@@ -564,10 +596,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"VisWake Clock/Preview Content\"";
 				DEVELOPMENT_TEAM = R6SSQ5A38J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "VisWake Clock";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -596,8 +630,6 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_USER_SCRIPT_SANDBOXING = "NO";
 			};
 			name = Debug;
 		};
@@ -610,10 +642,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"VisWake Clock/Preview Content\"";
 				DEVELOPMENT_TEAM = R6SSQ5A38J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "VisWake Clock";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
@@ -642,8 +676,6 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_USER_SCRIPT_SANDBOXING = "NO";
 			};
 			name = Release;
 		};
@@ -779,20 +811,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9084BBEF2CCB1CAB00F09E74 /* XCRemoteSwiftPackageReference "sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/open-meteo/sdk.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 		729589BCE4BA4C4D96778F86 /* XCRemoteSwiftPackageReference "sentry-cocoa" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/getsentry/sentry-cocoa/";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 8.0.0;
+			};
+		};
+		9084BBEF2CCB1CAB00F09E74 /* XCRemoteSwiftPackageReference "sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/open-meteo/sdk.git";
+			requirement = {
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -809,24 +841,6 @@
 			productName = Sentry;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		F242EE5486FE43F8AF2C7B66 /* Upload Debug Symbols to Sentry */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			name = "Upload Debug Symbols to Sentry";
-			inputPaths = (
-				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
-			);
-			outputPaths = (
-			);
-			shellPath = /bin/sh;
-			shellScript = "# This script is responsable to upload debug symbols and source context for Sentry.\nif which sentry-cli >/dev/null; then\nexport SENTRY_ORG=syn-by-design\nexport SENTRY_PROJECT=vizwake-clock\nERROR=$(sentry-cli debug-files upload --include-sources \"$DWARF_DSYM_FOLDER_PATH\" 2>&1 >/dev/null)\nif [ ! $? -eq 0 ]; then\necho \"warning: sentry-cli - $ERROR\"\nfi\nelse\necho \"warning: sentry-cli not installed, download from https://github.com/getsentry/sentry-cli/releases\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 	};
 	rootObject = 9051EFA72C97707200831C64 /* Project object */;
 }
