@@ -5,6 +5,7 @@
 //  Created by Eric Masiello on 10/24/24.
 //
 import Foundation
+import Sentry
 import OpenMeteoSdk
 
 /// Make sure the URL contains `&format=flatbuffers`
@@ -21,15 +22,27 @@ enum WeatherClient {
     let responses = try? await WeatherApiResponse.fetch(url: url)
 
     guard let responses else {
+      SentrySDK.capture(message: "No responses")
       return nil
     }
-    let response = responses[0]
+    
+    guard let response = responses.first else {
+      SentrySDK.capture(message: "Weather response is empty")
+      return nil
+    }
 
     /// Attributes for timezone and location
     let utcOffsetSeconds = response.utcOffsetSeconds
-
-    let current = response.current!
-    let daily = response.daily!
+    
+    guard let current = response.current else {
+      SentrySDK.capture(message: "No current weather data")
+      return nil
+    }
+    
+    guard let daily = response.daily else {
+      SentrySDK.capture(message: "No daily weather data")
+      return nil
+    }
 
     /// Note: The order of weather variables in the URL query and the `at` indices below need to match!
     let data = WeatherData(

@@ -15,6 +15,7 @@
 import Combine
 import CoreLocation
 import Foundation
+import Sentry
 
 struct GPSCoordinateNormalizer {
   /// Normalizes GPS coordinates and provides comparison with a minimum distance threshold
@@ -120,18 +121,15 @@ final class LocationManager: NSObject, ObservableObject, CLLocationManagerDelega
     switch status {
     case .authorizedWhenInUse, .authorizedAlways:
       manager.startUpdatingLocation()
-    case .denied, .restricted:
-      // Handle denied/restricted access
-      print("Location access denied or restricted")
     case .notDetermined:
       manager.requestWhenInUseAuthorization()
-    @unknown default:
+    default:
       break
     }
   }
 
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-    print("Location manager error: \(error.localizedDescription)")
+    SentrySDK.capture(error: error)
   }
 
   func requestAccess() {
