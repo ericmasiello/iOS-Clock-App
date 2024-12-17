@@ -97,6 +97,7 @@ struct SettingsView: View {
           userConfiguration.countdownEvents.append(newCountdownEvent)
           newCountdownEvent = CountdownEvent(date: Date(), name: "")
         }
+        .disabled(newCountdownEvent.name.isEmpty)
       }
       
       Section("Countdown Events") {
