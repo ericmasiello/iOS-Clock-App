@@ -11,7 +11,6 @@ import OpenMeteoSdk
 enum WeatherClient {
   static func getWeather(latitude: Double, longitude: Double) async -> WeatherData? {
     /**
-     * TODO: the lat/long is harcoded. I'll need to access this information via the iOS hardware somehow
      * TODO: this data comes back as a buffer. It works but is difficutl to debug. if you change &format=json it'll be JSON. then i need to figure out how to parse that into a struct. Chat GPT it.
      */
     let url = URL(

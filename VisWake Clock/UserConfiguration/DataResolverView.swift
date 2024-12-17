@@ -9,14 +9,12 @@ import SwiftUI
 import SwiftData
 
 struct DataResolverView: View {
-//  @ViewBuilder let content: (UserConfiguration) -> Content
   @Environment(\.modelContext) var modelContext
   @Query(sort: \UserConfiguration.wakeupTime) var userConfigurations: [UserConfiguration]
   
   var body: some View {
     Group {
       if let userConfig = userConfigurations.first {
-//        content(userConfig)
         ContentView(userConfig: userConfig)
       } else {
         LoadingView()
