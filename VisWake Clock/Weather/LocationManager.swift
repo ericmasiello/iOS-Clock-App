@@ -15,6 +15,7 @@
 import Combine
 import CoreLocation
 import Foundation
+import Sentry
 
 struct GPSCoordinateNormalizer {
   /// Normalizes GPS coordinates and provides comparison with a minimum distance threshold
@@ -61,12 +62,7 @@ struct GPSCoordinateNormalizer {
 }
 
 final class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
-  private func debugCoordinates(coords: (Double, Double)?) -> (String, String) {
-    guard let (lat, long) = coords else { return ("Unknown", "Unknown") }
-
-    return (String(lat), String(long))
-  }
-
+  
   private let manager = CLLocationManager()
 
   @Published var lat: Double?
@@ -125,68 +121,18 @@ final class LocationManager: NSObject, ObservableObject, CLLocationManagerDelega
     switch status {
     case .authorizedWhenInUse, .authorizedAlways:
       manager.startUpdatingLocation()
-    case .denied, .restricted:
-      // Handle denied/restricted access
-      print("Location access denied or restricted")
     case .notDetermined:
       manager.requestWhenInUseAuthorization()
-    @unknown default:
+    default:
       break
     }
   }
 
   func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-    print("Location manager error: \(error.localizedDescription)")
+    SentrySDK.capture(error: error)
   }
 
   func requestAccess() {
     manager.requestWhenInUseAuthorization()
   }
 }
-
-// final class LocationManager: NSObject, CLLocationManagerDelegate, ObservableObject {
-//  @Published var lastKnownLocation: CLLocationCoordinate2D?
-//
-//  @Published var lat: Float?
-//  @Published var long: Float?
-//
-//  var manager = CLLocationManager()
-//
-//  func checkLocationAuthorization() {
-//    manager.delegate = self
-//    manager.startUpdatingLocation()
-//
-//    switch manager.authorizationStatus {
-//    case .notDetermined: // The user choose allow or denny your app to get the location yet
-//      manager.requestWhenInUseAuthorization()
-//
-//    case .restricted: // The user cannot change this app’s status, possibly due to active restrictions such as parental controls being in place.
-//      print("Location restricted")
-//
-//    case .denied: // The user dennied your app to get location or disabled the services location or the phone is in airplane mode
-//      print("Location denied")
-//
-//    case .authorizedAlways: // This authorization allows you to use all location services and receive location events whether or not your app is in use.
-//      print("Location authorizedAlways")
-//
-//    case .authorizedWhenInUse: // This authorization allows you to use all location services and receive location events only when your app is in use
-//      print("Location authorized when in use")
-//
-//      guard let location = manager.location else { return }
-//
-//      lat = Float(location.coordinate.latitude)
-//      long = Float(location.coordinate.longitude)
-//
-//    @unknown default:
-//      print("Location service disabled")
-//    }
-//  }
-//
-//  func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) { // Trigged every time authorization status changes
-//    checkLocationAuthorization()
-//  }
-//
-//  func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//    lastKnownLocation = locations.first?.coordinate
-//  }
-// }

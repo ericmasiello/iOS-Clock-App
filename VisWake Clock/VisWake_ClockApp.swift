@@ -7,7 +7,6 @@
 
 import SwiftData
 import Sentry
-
 import SwiftUI
 
 @main
@@ -29,7 +28,7 @@ struct VisWake_ClockApp: App {
              options.attachViewHierarchy = true // This adds the view hierarchy to the error events
         }
         // Remove the next line after confirming that your Sentry integration is working.
-        SentrySDK.capture(message: "This app uses Sentry! :)")
+//        SentrySDK.capture(message: "This app uses Sentry! :)")
     }
   var body: some Scene {
     WindowGroup {

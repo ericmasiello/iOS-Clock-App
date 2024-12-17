@@ -5,13 +5,13 @@
 //  Created by Eric Masiello on 10/24/24.
 //
 import Foundation
+import Sentry
 import OpenMeteoSdk
 
 /// Make sure the URL contains `&format=flatbuffers`
 enum WeatherClient {
   static func getWeather(latitude: Double, longitude: Double) async -> WeatherData? {
     /**
-     * TODO: the lat/long is harcoded. I'll need to access this information via the iOS hardware somehow
      * TODO: this data comes back as a buffer. It works but is difficutl to debug. if you change &format=json it'll be JSON. then i need to figure out how to parse that into a struct. Chat GPT it.
      */
     let url = URL(
@@ -22,15 +22,27 @@ enum WeatherClient {
     let responses = try? await WeatherApiResponse.fetch(url: url)
 
     guard let responses else {
+      SentrySDK.capture(message: "No responses")
       return nil
     }
-    let response = responses[0]
+    
+    guard let response = responses.first else {
+      SentrySDK.capture(message: "Weather response is empty")
+      return nil
+    }
 
     /// Attributes for timezone and location
     let utcOffsetSeconds = response.utcOffsetSeconds
-
-    let current = response.current!
-    let daily = response.daily!
+    
+    guard let current = response.current else {
+      SentrySDK.capture(message: "No current weather data")
+      return nil
+    }
+    
+    guard let daily = response.daily else {
+      SentrySDK.capture(message: "No daily weather data")
+      return nil
+    }
 
     /// Note: The order of weather variables in the URL query and the `at` indices below need to match!
     let data = WeatherData(
